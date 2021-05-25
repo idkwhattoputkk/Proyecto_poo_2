@@ -20,16 +20,16 @@ protected:
     int x;
     int y;
 public:
-    virual ~Item();
+    virtual ~Item();
     Item();
-    Item(string nombre, int, int,int);
-    virual void usar() = 0;
+    Item(string nombre, int, int x,int y);
+    virtual void usar() = 0;
     void mensaje();
     string getNombre() const;
     int getX() const;
     int getY() const;
-    void setX(int );
-    void setY(int)
+    void setX(int x);
+    void setY(int y);
 
 
 

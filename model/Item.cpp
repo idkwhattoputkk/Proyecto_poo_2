@@ -5,9 +5,19 @@
 #include "Item.h"
 
 
-Item::Item() {}
-Item::Item(string nombre, int, int, int) {
+
+
+Item::Item(){
+   
+}
+
+
+Item::Item(string nombre, int desgaste, int x, int y) {
     this->nombre = nombre;
+    this->desgaste = desgaste;
+    this->x = x;
+    this->y = y;
+
 }
 int Item::getX() const {
     return this->x;
@@ -26,6 +36,5 @@ void Item::setX(int x) {
 void Item::setY(int y) {
     this->y = y;
 }
-Item::~Item(){
-
-}
+Item::~Item()
+{}
