@@ -6,15 +6,7 @@
 #include <vector>
 #include <map>
 
-
-using std::cin;
-using std::cout;
-using std::endl;
 using std::string;
-using std::vector;
-using std::map;
-using std::iterator;
-using std::pair;
 
 class Entidad {
 
