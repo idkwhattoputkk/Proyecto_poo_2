@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
 
 using std::string;
 
@@ -22,7 +20,7 @@ public:
     string getName();
     int getHP();
     int getX();
-    int getY;
+    int getY();
     void setX(int);
     void setY(int);
     void setHP(int);
