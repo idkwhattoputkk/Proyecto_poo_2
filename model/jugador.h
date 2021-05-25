@@ -41,7 +41,6 @@ public:
     void usar(int);
     void addInventario(Item*);
     int eliminarItem(int);
-    ~Jugador();
 
 };
 #endif //JUGADOR_H

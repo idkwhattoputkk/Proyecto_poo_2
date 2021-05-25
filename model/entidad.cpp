@@ -38,4 +38,4 @@ void Entidad::setY(int y){
 void Entidad::setHP(int HP){
     this->puntosVida = HP;
 }
-~Entidad(){}
+Entidad::~Entidad(){}
