@@ -10,8 +10,6 @@
 Item::Item(){
    
 }
-
-
 Item::Item(string nombre, int desgaste, int x, int y) {
     this->nombre = nombre;
     this->desgaste = desgaste;

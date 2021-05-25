@@ -13,7 +13,7 @@ class Item {
     // Attributes and constants
 protected:
     string nombre;
-    static const int durabilidad;
+    static const int DURABILIDAD;
     int desgaste;
     int frecuenciaAparicion;
     int frecuenciaDesaparicion;
@@ -22,7 +22,7 @@ protected:
 public:
     virtual ~Item();
     Item();
-    Item(string nombre, int, int x,int y);
+    Item(string nombre, int desgaste, int x,int y);
     virtual void usar() = 0;
     void mensaje();
     string getNombre() const;
