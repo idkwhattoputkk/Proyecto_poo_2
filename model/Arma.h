@@ -9,9 +9,9 @@
 
 //Clase arma
 class Arma : public Item{
-private:
-    static const int potencia;
-public:
+private: //atributos
+    static const int POTENCIA;
+public: //metodos
     Arma();
     Arma(int);
     int getPotencia();

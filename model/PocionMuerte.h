@@ -7,13 +7,13 @@
 //includes
 #include "model/Item.h"
 class PocionMuerte: public Item{
-private:
+private://atributos
     int numAleatorio;
     static const int MIN, MAX, NUMEXITO;
-public:
+public://metodos
     PocionMuerte();
     bool hacerEfecto();
-    // ~PocionMuerte();
+    ~PocionMuerte();
 };
 
 #endif // POCIONMUERTE_H

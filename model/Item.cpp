@@ -3,10 +3,9 @@
 //
 
 #include "Item.h"
-
-
-
-
+// constante de durabilidad
+const int Item::DURABILIDAD = 40;
+//meotodos clase Item
 Item::Item(){
    
 }

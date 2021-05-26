@@ -14,5 +14,6 @@ private:
 public:
     PocionAtaque();
     int getATK();
+    ~PocionAtaque();
 };
 #endif // POCIONATAQUE_H

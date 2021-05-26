@@ -14,9 +14,7 @@ private: // atributos
     static const int NUMEXITO, MAX, MIN;
 public: //metodos
     PocionEscape();
+    ~PocionEscape();
     bool hacerEfecto();
 };
-
-
-
 #endif

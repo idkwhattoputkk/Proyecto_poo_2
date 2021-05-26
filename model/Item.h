@@ -19,7 +19,7 @@ protected:
     int frecuenciaDesaparicion;
     int x;
     int y;
-public:
+public://Metodos
     virtual ~Item();
     Item();
     Item(string nombre, int desgaste, int x,int y);
@@ -30,10 +30,5 @@ public:
     int getY() const;
     void setX(int x);
     void setY(int y);
-
-
-
 };
-
-
 #endif //ITEM_H
