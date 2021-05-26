@@ -6,6 +6,8 @@
 #define POCIONESCAPE_H
 //includes
 #include "Item.h"
+#include <cstdlib>
+#include <ctime>
 //Clase pocion escape
 class PocionEscape: public Item
 {
