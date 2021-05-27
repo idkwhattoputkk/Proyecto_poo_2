@@ -5,19 +5,25 @@
 #include "../model/entidad.h"
 #include "../model/Item.h"
 
-/*Pendiente:
-Definir el union / struct con*/
-
 using std::unordered_map;
+
+typedef struct{
+    typedef union{
+        Entidad* entidad;
+        Item* item;
+    } content;
+
+    enum Tipo = {ENTIDAD, ITEM};
+} Position;
 
 class Mazmorra
 {
 private:
-    unordered_map<int, Union*> mazmorra;
+    unordered_map<int, Position*> mazmorra;
 public:
     Mazmorra();
-    Union* getContenido(int) const;
-    void setContenido(int, Union*);
+    Position* getContenido(int) const;
+    void setContenido(int, Position*);
     void quitar(int);
 };
 
