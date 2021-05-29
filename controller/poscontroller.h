@@ -8,7 +8,7 @@ class PosController
 public:
     PosController();
     void posicionar(Mazmorra*, int, Position*);
-    void mover(Mazmorra*, Entidad*, int);
+    bool mover(Mazmorra*, Entidad*, int);
     void quitar(Mazmorra*, int);
     bool ocupado(Mazmorra*, int);
 };

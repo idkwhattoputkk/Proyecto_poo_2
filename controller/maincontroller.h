@@ -1,10 +1,13 @@
 #ifdef MAIN_CONTROLLER_H
 #define MAIN_CONTROLLER_H
 
+#include <iostream>
 #include "poscontroller.h"
 #include "fightcontroller.h"
 #include "takecontroller.h"
 #include "../model/mazmorra.h"
+
+using std::cout;
 
 class MainController
 {
@@ -18,7 +21,8 @@ private:
 public:
     MainController();
     void actualizarJugadorPos(int);
-    void terminarJuego();
+    void posicionar(int, Position*);
+    bool terminarJuego();
     void mostrarGameStatus(string);
 };
 
