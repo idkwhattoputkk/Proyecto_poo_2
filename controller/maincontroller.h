@@ -24,6 +24,7 @@ public:
     void posicionar(int, Position*);
     bool terminarJuego();
     void mostrarGameStatus(string);
+    void lanzarEvento(Tipo, int);
 };
 
 #endif
