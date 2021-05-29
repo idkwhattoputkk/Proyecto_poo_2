@@ -7,34 +7,20 @@
 #include "ataque.h"
 #include <string>
 #include <vector>
-
+#include <ctime>
+#include <cstdlib>
 
 using std::string;
 using std::vector;
 
 class Jefe : public Entidad{
-
-protected:
-    string nombre;
-    int puntosVida;
-    const int vidaMax;
-    int x;
-    int y;
-
 private:
     Item recompensa;
     vector<Ataque> listaAtaques;
 
 public:
     Jefe();
-    string getName();
-    int getHP();
-    int getX();
-    int getY();
-    void setX(int);
-    void setY(int);
-    void setHP(int);
-    Item &getRecompensa();
-
+    Jefe(string, int, int, int);
+    Item getRecompensa();
 };
 #endif //JEFE_H
