@@ -12,8 +12,8 @@ protected:
     string nombre;
     int puntosVida;
     const int vidaMax;
-    int x;
-    int y;
+    int x, y;
+
 public:
     Entidad();
     Entidad(string, int, int, int);
@@ -24,7 +24,7 @@ public:
     void setX(int);
     void setY(int);
     void setHP(int);
+    virtual void atacar(Entidad*) = 0;
     ~Entidad();
-
 };
 #endif //ENTIDAD_H

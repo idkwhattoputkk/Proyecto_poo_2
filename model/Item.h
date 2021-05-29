@@ -22,8 +22,8 @@ protected:
 public://Metodos
     virtual ~Item();
     Item();
-    Item(string nombre, int desgaste, int x,int y);
-    virtual void usar() = 0;
+    Item(string, int, int, int);
+    virtual void usar(Entidad*, Entidad*) = 0;
     void mensaje();
     string getNombre() const;
     int getX() const;

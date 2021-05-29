@@ -13,7 +13,7 @@ typedef struct{
         Item* item;
     } content;
 
-    enum Tipo = {ENTIDAD, ITEM};
+    enum Tipo = {VACIO, ENTIDAD, ITEM};
 } Position;
 
 class Mazmorra
@@ -22,9 +22,11 @@ private:
     unordered_map<int, Position*> mazmorra;
 public:
     Mazmorra();
+    Mazmorra(int);
     Position* getContenido(int) const;
     void setContenido(int, Position*);
     void quitar(int);
+    bool ocupado(int);
 };
 
 #endif

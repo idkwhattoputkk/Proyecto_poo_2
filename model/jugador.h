@@ -5,8 +5,7 @@
 #include "entidad.h"
 #include "item.h"
 #include <string>
-#include <map>
-
+#include <unorderded_map>
 
 using std::string;
 using std::map;
@@ -14,33 +13,22 @@ using std::cout;
 using std::cin;
 using std::pair;
 
-class Jugador : public Entidad{
-
-protected:
-    string nombre;
-    int puntosVida;
-    const int vidaMax;
-    int x;
-    int y;
-
+class Jugador : public Entidad
+{
 private:
-    map<int,Item> inventario;
+    unordered_map<int,Item*> inventario;
     int puntosATK;
+    int numItems;
+    static const int bolsillos;
 
 public:
     Jugador();
-    string getName();
-    int getHP();
-    int getX();
-    int getY();
-    void setX(int);
-    void setY(int);
-    void setHP(int);
+    Jugador(string, int, int, int);
+    int getNumItems() const;
     void mostrarInventario();
     void setATK();
-    void usar(int);
+    //void usar(int, Entidad*);
     void addInventario(Item*);
     int eliminarItem(int);
-
 };
 #endif //JUGADOR_H
