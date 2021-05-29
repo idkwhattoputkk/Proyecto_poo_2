@@ -13,8 +13,8 @@ Item Jefe::getRecompensa(){
     return recompensa;
 }
 
-void Jefe::atacar(Entidad* enemigo){
-    srand(time(NULL))
+void Jefe::atacar(Entidad* enemigo) override{
+    srand(time(NULL));
     int posAtaque = rand() % listaAtaques.size();
     Ataque atk = listaAtaques[posAtaque];
     std::cout << getName() << " usa " << atk->getNombre() << std::endl;
