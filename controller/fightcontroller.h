@@ -11,7 +11,7 @@ public:
     PeleaController();
     bool batalla(Jugador*, Mazmorra*, int);
     unsigned int getTurnos() const;
-    void incrementarTurnos(unsigned);
+    void incrementarTurnos();
 };
 
 #endif
