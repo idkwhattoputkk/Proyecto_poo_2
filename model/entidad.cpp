@@ -19,20 +19,12 @@ int Entidad::getHP(){
     return this->puntosVida;
 }
 
-int Entidad::getX(){
-    return this->x;
+int Entidad::getPos() const{
+    return this->pos;
 }
 
-int Entidad::getY{
-    return this->y;
-}
-
-void Entidad::setX(int x){
-    this->x = x;
-}
-
-void Entidad::setY(int y){
-    this->y = y;
+void Entidad::setPos(int pos){
+    this->pos = pos;
 }
 
 void Entidad::setHP(int HP){
