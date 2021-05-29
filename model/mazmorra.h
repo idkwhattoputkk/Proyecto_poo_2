@@ -7,13 +7,17 @@
 
 using std::unordered_map;
 
+enum Tipo{
+    VACIO, ENTIDAD, ITEM
+};
+
 typedef struct{
     typedef union{
         Entidad* entidad;
         Item* item;
     } content;
-
-    enum Tipo = {VACIO, ENTIDAD, ITEM};
+    Tipo tipo;
+    
 } Position;
 
 class Mazmorra
