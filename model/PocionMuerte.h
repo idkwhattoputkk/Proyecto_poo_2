@@ -6,8 +6,8 @@
 #define POCIONMUERTE_H
 //includes
 #include "model/Item.h"
-#include<cstdlib>
-#include<ctime>
+#include <cstdlib>
+#include <ctime>
 //clase de pocion de muerte
 class PocionMuerte: public Item{
 private://atributos
