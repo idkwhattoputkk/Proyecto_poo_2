@@ -61,7 +61,7 @@ private:
 public:
     Mazmorra();
     Mazmorra(int, int, int);
-    Position* getContenido(int) const;
+    Position* getContenido(int);
     void setContenido(int, Position*);
     void quitarContenido(int);
     int randomPos(int);
