@@ -8,7 +8,7 @@ void PosController::posicionar(Mazmorra* mazmorra, int pos, Position* position)
 }
 
 bool PosController::mover(Mazmorra* mazmorra, Jugador* jugador, int pos)
-{
+{   
     if( ocupado(mazmorra, pos) != VACIO ) return false;
     mazmorra->setContenido(pos, jugador);
     mazmorra->quitarContenido( pos );
