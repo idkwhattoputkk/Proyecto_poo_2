@@ -14,7 +14,7 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
 * [Wiki](https://github.com/idkwhattoputkk/Proyecto_poo_2/wiki)
 
 ## Documentation
-Es un juego basado en C++, utilizando herencia, **POO** (Programacion Orientada a Objetos), sobreescritura y sobrecarga  principalmente en las clases que heredan de Entidad e Item.
+Es un juego basado en [C++](https://en.wikipedia.org/wiki/C%2B%2B), utilizando herencia, **POO** (Programacion Orientada a Objetos), sobreescritura y sobrecarga  principalmente en las clases que heredan de Entidad e Item.
 ### Weapons
 Para el combate cuerpo a cuerpo y a turnos, decidimos utilizar armas basadas en estos combates, como lo son lanzas, cuchillos, dagas, etc. esto para dar un ambiente mas a peleas de este estilo que requiere el juego en vez del estilo *"shooter"*. Ademas, estas armas son quienes le brindaran un *boost* de daño para derrotar a los enemigos que impidan culminar la cruzada de nuestro caballero con exito.
 ### Villains
