@@ -7,21 +7,24 @@ bool PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
 {
     Position* enemigo = mazmorra->getContenido(pos);
     do{
-        jugador->turno( enemigo->content );
+        Jugador* player = dynamic_cast<Jugador*>(jugador);
+        if( player == nullptr ) continue;
+        jugador->turno( enemigo->contenido.entidad );
         this->incrementarTurnos();
-        if( enemigo->content->getHP() <= 0 ){
+        if( enemigo->contenido.entidad->getHP() <= 0 ){
             std::cout << "Venciste!\n";
-            Item* recompensa = enemigo->content->soltar();
+            Item* recompensa = enemigo->contenido.entidad->soltar();
             if( recompensa != nullptr ){
-                Position contenido = {.content = recompensa, .tipo = ITEM};
+                Position p = {.tipo=ITEM};
+                p.contenido.item = recompensa;
                 mazmorra->quitarContenido( pos );
-                mazmorra->setContenido(pos, &contenido);
+                mazmorra->setContenido(pos, &p);
             } else mazmorra->quitarContenido( pos );
             return true;
         }
-        if( jugador->getEscape() == true ) return true;
+        if( player->getEscape() == true ) return true;
         
-        enemigo->content->turno( jugador );
+        enemigo->contenido.entidad->turno( jugador );
         if( jugador->getHP() <= 0 ){
             return false;
         }
@@ -33,7 +36,7 @@ unsigned int PeleaController::getTurnos() const
     return turnos;
 }
 
-void PeleaController::incrementarTurnos(unsigned value)
+void PeleaController::incrementarTurnos()
 {
     ++turnos;
 }

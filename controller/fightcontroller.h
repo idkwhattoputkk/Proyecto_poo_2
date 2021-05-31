@@ -3,6 +3,7 @@
 
 #include "../model/mazmorra.h"
 #include "../model/entidad.h"
+#include "../model/jugador.h"
 
 class PeleaController
 {
