@@ -13,7 +13,7 @@ View::View(): jugadorX(0), jugadorY(0)
     }
 }
 
-View::jugar(){
+void View::jugar(){
     do{
         actualizarJugadorPos();
     }while (getEstadoJuego() == false);
@@ -24,7 +24,7 @@ Dificultad View::setDificultad()
     int opc;
     Dificultad dif;
     do{
-        std::cout << "Elegir dificultad:\n1. Facil\n2.Dificil\n> ";
+        std::cout << "Elegir dificultad:\n1. Facil\n2. Dificil\n> ";
         try{
             std::cin >> opc;
         }catch( std::ios_base::failure &e ){
@@ -60,7 +60,7 @@ void View::actualizarJugadorPos()
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Opcion invalida\n";
-            opc = 0;
+            mov = 0;
         }
         switch(mov){
             case 1:
