@@ -6,7 +6,7 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
   * [History](#history)
   * [More info](#info)
   * [Class Diagram](#uml)
-* [Wiki](https://github.com/idkwhattoputkk/catch-em-now/wiki)
+* [Wiki](https://github.com/idkwhattoputkk/Proyecto_poo_2/wiki)
 * [Auto Evaluacion](#Evaluaciones)
 
 ## Documentation
@@ -27,5 +27,6 @@ Puedes encontrar mas informacion con presicion [aqui.](https://sway.office.com/5
 > dale un vistazo.
 
 ### Uml
-![UML](images/THE GAME.jpg)
+![alt text][logo]
+[logo]: images/THE_GAME.jpg
 ## Evaluciones
