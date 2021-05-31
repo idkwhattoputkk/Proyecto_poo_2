@@ -11,29 +11,29 @@ tomarController: controller/takecontroller.cpp controller/takecontroller.h
 arma: model/Arma.cpp model/Arma.h
 	g++ -c model/Arma.cpp
 ataque: model/ataque.cpp model/ataque.h
-	g+ -c model/ataque.cpp
+	g++ -c model/ataque.cpp
 entidad: model/entidad.cpp model/entidad.h
-	g+ -c model/entidad.cpp
+	g++ -c model/entidad.cpp
 item: model/Item.cpp model/Item.h
-	g+ -c model/Item.cpp
+	g++ -c model/Item.cpp
 jefe: model/jefe.cpp model/jefe.h
-	g+ -c model/jefe.cpp
+	g++ -c model/jefe.cpp
 jugador: model/jugador.cpp model/jugador.h
-	g+ -c model/jugador.cpp
+	g++ -c model/jugador.cpp
 mazmorra: model/mazmorra.cpp model/mazmorra.h
-	g+ -c model/mazmorra.cpp
+	g++ -c model/mazmorra.cpp
 pocionAtaque: model/PocionAtaque.cpp model/PocionAtaque.h
-	g+ -c model/PocionAtaque.cpp
+	g++ -c model/PocionAtaque.cpp
 pocionEscape: model/PocionEscape.cpp model/PocionEscape.h
-	g+ -c model/PocionEscape.cpp
+	g++ -c model/PocionEscape.cpp
 pocionMuerte: model/PocionMuerte.cpp model/PocionMuerte.h
-	g+ -c model/PocionMuerte.cpp
+	g++ -c model/PocionMuerte.cpp
 pocionResistencia: model/PocionResistencia.cpp model/PocionResistencia.h
-	g+ -c model/PocionResistencia.cpp
+	g++ -c model/PocionResistencia.cpp
 pocionVida: model/PocionVida.cpp model/PocionVida.h
-	g+ -c model/PocionVida.cpp
+	g++ -c model/PocionVida.cpp
 villano: model/villano.cpp model/villano.h
-	g+ -c model/villano.cpp
+	g++ -c model/villano.cpp
 
 clean: #comando para borrar los .o
 	del *.o, del *.exe
