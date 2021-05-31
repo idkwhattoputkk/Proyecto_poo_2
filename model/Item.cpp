@@ -1,20 +1,19 @@
 #include "Item.h"
 
 //meotodos clase Item
-Item::Item() : usos(DURABILIDAD), pocket(0), existencia(0) {}
+Item::Item() : DURABILIDAD(0), usos(DURABILIDAD), pocket(0), existencia(0), frecuenciaAparicion(0), 
+    frecuenciaDesaparicion(0) {}
 
 Item::Item(string nombre, int durabilidad, int desgaste,
     int frecuenciaAparicion, int frecuenciaDesaparicion) : 
     nombre(nombre), DURABILIDAD(durabilidad), desgaste(desgaste), pos(-1), 
-    frecuenciaAparicion(frecuenciaAparicion), frecuenciaDesaparicion(frecuenciaDesaparicion)
-    Item() {}
+    frecuenciaAparicion(frecuenciaAparicion), frecuenciaDesaparicion(frecuenciaDesaparicion) {}
 
-Item::Item(const Item& item) : pocket(0), pos(-1), existencia(0)
+Item::Item(const Item& item) : DURABILIDAD(item.getDurabilidad()), 
+    frecuenciaAparicion(item.getAparicion()), frecuenciaDesaparicion(item.getDesaparicion()),
+    pocket(0), pos(-1), existencia(0)
 {
     this->nombre = item.getNombre();
-    this->DURABILIDAD = item.getDurabilidad();
-    this->frecuenciaAparicion = item.getAparicion();
-    this->frecuenciaDesaparicion = item.getDesaparicion();
     this->desgaste = item.getDesgaste();
     usos = DURABILIDAD;
 }
@@ -28,7 +27,7 @@ string Item::getNombre() const {
 }
 void Item::mensaje() 
 {
-    cout << "Tomar " << nombre << " ?\n";
+    std::cout << "Tomar " << this->nombre << " ?\n";
 }
 
 void Item::setPos(int pos) {
@@ -81,3 +80,10 @@ int Item::getDesaparicion() const
 }
 
 Item::~Item() {}
+
+void Item::setPocket(int pocket){
+    this->pocket = pocket;
+}
+
+void Item::usar(Entidad*, Entidad*){
+}

@@ -2,6 +2,7 @@
 #define ITEM_H
 //includes
 #include <string>
+#include <iostream>
 
 using std::string;
 
@@ -18,7 +19,7 @@ public://Metodos
     Item();
     Item(string,int,int,int,int);
     Item(const Item&);
-    virtual void usar(Entidad*, Entidad*) = 0;
+    virtual void usar(Entidad*, Entidad*);
     void mensaje();
     string getNombre() const;
     int getPos() const;
