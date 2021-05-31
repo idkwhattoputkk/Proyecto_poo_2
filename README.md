@@ -3,7 +3,8 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
 ***
 * [Documentation](#documentation)
   * [Armas](#weapons)
-  * [Pociones](#potions) 
+  * [Villanos](#villains)
+  * [Pociones y recompensas](#potions) 
   * [Mecanicas](#mechanics)
 * [Purpose & General Info](#philosophy)
   * [History](#history)
@@ -13,13 +14,19 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
 * [Wiki](https://github.com/idkwhattoputkk/Proyecto_poo_2/wiki)
 
 ## Documentation
-Es un juego basado en C++, utilizando herencia, **POO** (Programacion Orientada a Objetos), sobreescritura y sobrecarga  principalmente en las clases que heredan de Entidad e Item.
+Es un juego basado en [C++](https://en.wikipedia.org/wiki/C%2B%2B), utilizando herencia, **POO** (Programacion Orientada a Objetos), sobreescritura y sobrecarga  principalmente en las clases que heredan de Entidad e Item.
 ### Weapons
-> TODO!
+Para el combate cuerpo a cuerpo y a turnos, decidimos utilizar armas basadas en estos combates, como lo son lanzas, cuchillos, dagas, etc. esto para dar un ambiente mas a peleas de este estilo que requiere el juego en vez del estilo *"shooter"*. Ademas, estas armas son quienes le brindaran un *boost* de daño para derrotar a los enemigos que impidan culminar la cruzada de nuestro caballero con exito.
+### Villains
+Los villanos se clasifican en dos tipos, **normales** y **jefes**, los jefes son mas fuertes que los normales e indican que esta finalizando el nivel, estos villanos son quienes se encargaran de combatir y hacerle la vida imposible a nuestro heroe. ***algo de la logica en la siguiente imagen***.
+![villanos](/images/villains.jpeg)
+![jefes](/images/jefes.jpeg)
 ### Potions
-En cuanto a las pociones decidimos tener 5 pociones de las cuales 2 de esas cuentan con un mecanimos de aletoriedad para hacer efecto (*"suerte"*). Las otras 3 restantes haran efecto apenas sean usadas.
+En cuanto a las pociones decidimos tener 5 pociones de las cuales 2 de esas cuentan con un mecanimos de aletoriedad para hacer efecto (*"suerte"*). Las otras 3 restantes haran efecto apenas sean usadas. Ademas se incluyo una recompensa que puede obtener en alguna ubicacion del mapa. Estas pociones le ayudaran a nuestro caballero en su cruzada para salvar su reino, cada una tiene una funcion unica y especial.
+***algo de la logica en la siguiente imagen***.
+![items](/images/items.jpeg)
 ###  Mechanics
-Las mecanicas para utilizar las dos pociones con *"suerte"* o aleatoriedad las cuales son ***Pocion de muerte*** y ***Pocion de escape***, se basan en un rango entre dos numeros fijos y un numero al azar generado por codigo que si es esta en este rango y ademas es igual a un numero x fijo definido previamente esta hara efecto, de lo contrario no funcionara.
+Las mecanicas para utilizar las dos pociones con *"suerte"* o aleatoriedad las cuales son ***Pocion de muerte*** y ***Pocion de escape***, se basan en un rango entre dos numeros fijos y un numero al azar generado por codigo que si es esta en este rango y ademas es igual a un numero **X** fijo definido previamente esta hara efecto, de lo contrario no funcionara.
 ## Philosophy
 El segundo proyecto de *POO* es un juego de pelea por turnos que nos toca desarrollar como estudiantes conformando grupos de maximo 4 estudiantes, con el proposito de poner a prueba las diferentes tematicas vistas en el curso codificando dicho proyecto.
 
