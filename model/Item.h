@@ -2,9 +2,10 @@
 #define ITEM_H
 //includes
 #include <string>
-#include "entidad.h"
 
 using std::string;
+
+class Entidad;
 //Class item
 class Item {
 protected:
