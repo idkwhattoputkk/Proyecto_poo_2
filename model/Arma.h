@@ -2,6 +2,7 @@
 #define ARMA_H
 
 #include "Item.h"
+#include "jugador.h"
 
 //Clase arma
 class Arma : public Item{

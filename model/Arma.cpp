@@ -1,25 +1,32 @@
-#include "model/arma.h"
+#include "Arma.h"
 //Metodos y constructores clase arma
-Arma::Arma(){}
+Arma::Arma(): POTENCIA(0) {}
 
-Arma::Arma(string nombre, int durabilidad, int desgaste, int frecAparicion
+Arma::Arma(string nombre, int durabilidad, int desgaste, int frecAparicion,
     int frecDesaparicion, int potencia) : 
-    POTENCIA(potencia), Item(nombre, durabilidad, desgaste, frecAparicion
-    frecDesaparicion) {}
+    Item(nombre, durabilidad, desgaste, frecAparicion, frecDesaparicion),
+    POTENCIA(potencia) {}
 
 int Arma::getPotencia() {
     return this->POTENCIA;
 }
 
-void Arma::usar(Entidad* jugador, Entidad* enemigo) override
+void Arma::usar(Entidad* jugador, Entidad* enemigo)
 {
-    int puntosATK = jugador.getATK() + POTENCIA;
+    Jugador* player;
+    do{
+        player = dynamic_cast<Jugador*>(jugador);
+        if( player == nullptr ) continue;
+        else break;
+    } while(true);
+    
+    int puntosATK = player->getATK() + POTENCIA;
     enemigo->setHP( enemigo->getHP() - puntosATK );
     usos -= desgaste;
     if( usos <= 0 ){
-        jugador->eliminarItem(pocket);
-        ~Arma();
+        player->eliminarItem(pocket);
+        delete this;
     }
 }
 
-Arma::~Arma() override {}
+Arma::~Arma() {}
