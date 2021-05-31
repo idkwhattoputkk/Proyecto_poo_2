@@ -2,7 +2,7 @@
 
 int main()
 {
-    View interfaz();
+    View interfaz;
     interfaz.jugar();
     return 0;
 }
