@@ -64,16 +64,36 @@ void View::actualizarJugadorPos()
         }
         switch(mov){
             case 1:
-                if( jugadorY - 1 >= UpperBorder ) --jugadorY; 
+                if( jugadorY - 1 >= UpperBorder ){
+                    --jugadorY; 
+                }else{
+                    std::cout << "No puedes avanzar por ahí\n";
+                    mov = 0;
+                }
                 break;
             case 2:
-                if( jugadorY + 1 < dimension ) ++jugadorY;
+                if( jugadorY + 1 < dimension ){
+                    ++jugadorY; 
+                }else{
+                    std::cout << "No puedes avanzar por ahí\n";
+                    mov = 0;
+                }
                 break;
             case 3:
-                if( jugadorX - 1 >= LeftBorder ) --jugadorX;
+                if( jugadorX - 1 >= LeftBorder ){
+                    --jugadorX; 
+                }else{
+                    std::cout << "No puedes avanzar por ahí\n";
+                    mov = 0;
+                }
                 break;
             case 4:
-                if( jugadorX + 1 < dimension ) ++jugadorX;
+                if( jugadorX + 1 < dimension ){
+                    ++jugadorX; 
+                }else{
+                    std::cout << "No puedes avanzar por ahí\n";
+                    mov = 0;
+                }
                 break;
             default:
                 std::cout << "Movimiento invalido\n\n";
