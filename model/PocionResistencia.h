@@ -4,18 +4,19 @@
 #ifndef POCIONRESISTENCIA_H
 #define POCIONRESISTENCIA_H
 //includes
-#include "model/Item.h"
+#include "../model/Item.h"
 
 //clase pocion de resistencia
 class PocionResistencia : public Item
 {
 private: //Atributos
-    int puntosResistencia;
+    const int puntosResistencia;
 public: //metodos
     PocionResistencia();
-    PocionResistencia(int);
-    ~PocionResistencia();
+    PocionResistencia(string,int,int,int,int,int);
     int getRP();
+    void usar(Entidad*,Entidad*) override;
+    ~PocionResistencia();
 };
 
 

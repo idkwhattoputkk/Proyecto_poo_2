@@ -1,7 +1,3 @@
-//
-// Created by Emanuel Umaña on 25/05/21.
-//
-
 #ifndef POCIONATAQUE_H
 #define POCIONATAQUE_H
 //includes
@@ -13,7 +9,10 @@ private:
     static const int PUNTOSATAQUE;
 public:
     PocionAtaque();
+    //Nombre,durabilidad,Desgaste,frecAparicion,frecDesaparicion,PUNTOSATAQUE
+    PocionAtaque(string, int, int, int, int, int);
     int getATK();
+    void usar(Entidad*, Entidad*) override;
     ~PocionAtaque();
 };
 #endif // POCIONATAQUE_H

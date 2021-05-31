@@ -1,16 +1,21 @@
 #include "PocionAtaque.h"
-//constante daño de ataque
-const int  PocionAtaque::PUNTOSATAQUE= 15;
-PocionAtaque::PocionAtaque()
-{
-    
-}
+
+PocionAtaque::PocionAtaque() {}
+
+PocionAtaque::PocionAtaque(string nombre, int durabilidad, int desgaste, int frecAparicion, 
+    int frecDesaparicion, int puntosATK) :
+    PUNTOSATAQUE(puntosATK), Item(nombre, durabilidad, desgaste, 
+    frecAparicion, frecDesaparicion) {}
 
 int PocionAtaque::getATK() {
     return this->PUNTOSATAQUE;
 }
 
-PocionAtaque::~PocionAtaque()
+void PocionAtaque::usar(Entidad* jugador, Entidad* enemigo) override
 {
-    
+    enemigo->setHP( enemigo->getHP() - PUNTOSATAQUE);
+    jugador->eliminarItem(pocket);
+    ~PocionAtaque();
 }
+
+PocionAtaque::~PocionAtaque() {}

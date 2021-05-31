@@ -1,13 +1,10 @@
-//
-// Created by Emanuel Umaña on 25/05/21.
-//
-
 #ifndef POCIONMUERTE_H
 #define POCIONMUERTE_H
 //includes
 #include "model/Item.h"
-#include<cstdlib>
-#include<ctime>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 //clase de pocion de muerte
 class PocionMuerte: public Item{
 private://atributos
@@ -15,7 +12,9 @@ private://atributos
     static const int MIN, MAX, NUMEXITO;
 public://metodos
     PocionMuerte();
+    PocionMuerte(string, int, int, int, int);
     bool hacerEfecto();
+    void usar(Entidad*, Entidad*) override;
     ~PocionMuerte();
 };
 

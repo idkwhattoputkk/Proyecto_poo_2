@@ -11,7 +11,9 @@ private://atributos
     const static int PUNTOSVIDA;
 public://metodos
     PocionVida();
+    PocionVida(string, int, int, int, int, int);
     ~PocionVida();
+    void usar(Entidad*, Entidad*) override;
     int getHP();
 };
 #endif //  POCIONVIDA_H
