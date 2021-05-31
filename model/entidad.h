@@ -7,8 +7,7 @@
 
 using std::string;
 
-class Entidad {
-
+class Entidad{
 protected:
     string nombre;
     int puntosVida;

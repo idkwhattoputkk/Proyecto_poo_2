@@ -6,12 +6,12 @@
 #include <ctime>
 #include <iostream>
 #include <string>
-#include <unorderded_map>
+#include <unordered_map>
 #include "entidad.h"
 #include "item.h"
 
 using std::string;
-using std::map;
+using std::unordered_map;
 using std::cout;
 using std::cin;
 using std::pair;
