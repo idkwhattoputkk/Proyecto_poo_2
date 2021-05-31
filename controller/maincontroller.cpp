@@ -51,7 +51,12 @@ void MainController::lanzarEvento(Tipo contenido, int pos)
     }
 }
 
-Dificultad getDificultad() const
+Dificultad MainController::getDificultad() const
 {
     return dificultad;
+}
+
+bool MainController::getJugando() const
+{
+    return jugando;
 }

@@ -31,6 +31,7 @@ public:
     bool terminarJuego();
     void mostrarGameStatus(string);
     void lanzarEvento(Tipo, int);
+    bool getJugando() const;
     Dificultad getDificultad() const;
 };
 
