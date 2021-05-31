@@ -1,11 +1,11 @@
 # JUEGO
-
+Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos en el reto de diseñar y codificar un videojuego a partir de unas instrucciones que nos brindo la profesora como proyecto para el curso. **Aqui esta el resultado**
 ***
 * [Documentation](#documentation)
 * [Purpose & General Info](#philosophy)
-  *[History](#history)
-  *[More info](#info)
-  *[Class Diagram](#uml)
+  * [History](#history)
+  * [More info](#info)
+  * [Class Diagram](#uml)
 * [Wiki](https://github.com/idkwhattoputkk/catch-em-now/wiki)
 * [Auto Evaluacion](#self)
 
