@@ -1,22 +1,28 @@
 #include "jefe.h"
 
-Jefe::Jefe(){
-
-}
-
-Jefe::Jefe(string nombre, int puntosVida, int vida, int pos): Entidad(nombre, puntosVida, vida, pos);
+Jefe::Jefe() : recompensa(nullptr)
 {
-
+    listaAtaques.push_back( Ataque("Rayo Tolerador", foo) );
+    listaAtaques.push_back( Ataque("Gas Pimienta", foo) );
+    listaAtaques.push_back( Ataque("Rasengan", foo) );
 }
 
-Item Jefe::getRecompensa(){
-    return recompensa;
-}
+Jefe::Jefe(string nombre, int vidaMax, int pos):
+Entidad(nombre, vidaMax, pos) {}
 
-void Jefe::atacar(Entidad* enemigo) override{
+Jefe::Jefe(string nombre, int vidaMax, int pos, Item* item): recompensa(item)
+Entidad(nombre, vidaMax, pos) {}
+
+void Jefe::turno(Entidad* enemigo) override
+{
     srand(time(NULL));
     int posAtaque = rand() % listaAtaques.size();
     Ataque atk = listaAtaques[posAtaque];
-    std::cout << getName() << " usa " << atk->getNombre() << std::endl;
-    enemigo->setHP( enemigo->getHP() - atk->getPotencia() );
+    std::cout << getName() << " usa " << atk.getNombre() << std::endl;
+    enemigo->setHP( enemigo->getHP() - atk.getPotencia() );
+}
+
+Item* Jefe::soltar() override
+{
+    return recompensa;
 }

@@ -1,26 +1,28 @@
 #ifndef JEFE_H
 #define JEFE_H
 
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
-#include "entidad.h"
-#include "item.h"
-#include "ataque.h"
 #include <string>
 #include <vector>
-#include <ctime>
-#include <cstdlib>
+#include "ataque.h"
+#include "entidad.h"
+#include "item.h"
 
 using std::string;
 using std::vector;
 
 class Jefe : public Entidad{
 private:
-    Item recompensa;
+    Item* recompensa;
     vector<Ataque> listaAtaques;
 
 public:
     Jefe();
-    Jefe(string, int, int, int);
-    Item getRecompensa();
+    Jefe(string, int, int);
+    Jefe(string, int, int, Item*);
+    Item* soltar() override;
+    void atacar(Entidad*) override;
 };
 #endif //JEFE_H

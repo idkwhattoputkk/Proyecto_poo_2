@@ -15,7 +15,9 @@ private:
     vector<Ataque> listaAtaques;
 public:
     Villano();
-    Villano(string, int, int, int);
+    Villano(string, int, int);
+    void atacar(Entidad*) override;
+    Item* soltar() override;
     ~Villano();
 };
 #endif //ENTIDAD_H
