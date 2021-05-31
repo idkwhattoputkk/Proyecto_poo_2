@@ -9,8 +9,8 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
   * [History](#history)
   * [More info](#info)
   * [Class Diagram](#uml)
+* [Auto Evaluacion](#evaluciones)
 * [Wiki](https://github.com/idkwhattoputkk/Proyecto_poo_2/wiki)
-* [Auto Evaluacion](#Evaluaciones)
 
 ## Documentation
 Es un juego basado en C++, utilizando herencia, **POO** (Programacion Orientada a Objetos), sobreescritura y sobrecarga  principalmente en las clases que heredan de Entidad e Item.
