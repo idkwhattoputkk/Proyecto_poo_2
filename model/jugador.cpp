@@ -6,13 +6,13 @@ constexpr int NUMEXITO = 6;
 
 const int Jugador::bolsillos = 10;
 
-Jugador::Jugador(): numItems(0), escape(false)
+Jugador::Jugador(): numItems(0), escape(false), puntosATK(20)
 {
     for(int i = 1; i <= bolsillos; ++i)
         inventario.emplace(i, nullptr);
 }
 
-Jugador::Jugador(string nombre, int vidaMax, int pos): 
+Jugador::Jugador(string nombre, int vidaMax, int pos):
     Entidad(nombre, vidaMax, pos), Jugador() {}
 
 int Jugador::getNumItems() const

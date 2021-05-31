@@ -7,15 +7,15 @@ Mazmorra::Mazmorra()
         Position contenido = {.content = nullptr, .tipo = VACIO};
         mazmorra.emplace(i, contenido);
     }
-
-    Item* espada = new Arma("Hoja Celestial", foo, foo);
-    Item* lanza = new Arma("Lanza Infernal", foo, foo);
-    Item* cuchillo = new Arma("Daga desertico", foo, foo);
-    Item* pocionATK = new PocionAtaque("Pocion de Ataque",1,1,3,3,foo);
+    //Nombre,durabilidad,desgaste,frecuenciaAparicion,frecuenciaDesaparicion, Potencia
+    Item* espada = new Arma("Hoja Celestial", 2, 1, 2, 3, 50);
+    Item* lanza = new Arma("Lanza Infernal", 3, 1, 2, 3, 40);
+    Item* cuchillo = new Arma("Daga desertico", 4, 1, 2, 3, 30);
+    Item* pocionATK = new PocionAtaque("Pocion de Ataque",1,1,3,3,90);
     Item* pocionEsc = new PocionEscape("Pocion Escape",1,1,3,3);
-    Item* pocionDeath = new PocionMuerte("Pocion de Muerte",1,1,3,3,foo);
-    Item* pocionRes = new PocionResistencia("Pocion Resistencia",1,1,3,3,foo);
-    Item* pocionVida = new PocionVida("Pocion de Vida",1,1,3,3,foo);
+    Item* pocionDeath = new PocionMuerte("Pocion de Muerte",1,1,3,3);
+    Item* pocionRes = new PocionResistencia("Pocion Resistencia",1,1,3,3,2);
+    Item* pocionVida = new PocionVida("Pocion de Vida",1,1,3,3,70);
     listaGenerables.push_back(espada);
     listaGenerables.push_back(lanza);
     listaGenerables.push_back(cuchillo);
@@ -31,21 +31,21 @@ Mazmorra::Mazmorra(int dimension, int numMonsters, int numBoss)
     //Monstruos tipo A
     for(int i = 0; i < percentMonstersA * (numMonsters - numBoss); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Lich", foo, pos);
+        Entidad* entidad = new Villano("Lich", 60, pos);
         Position contenido = {.content = entidad, .tipo = ENTIDAD};
         mazmorra[pos] = &contenido;
     }
     //Monstruos tipo B
     for(int i = 0; i < percentMonstersB * (numMonsters - numBoss); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Cyberdemon", foo, pos);
+        Entidad* entidad = new Villano("Cyberdemon", 70, pos);
         Position contenido = {.content = entidad, .tipo = ENTIDAD};
         mazmorra[pos] = &contenido;
     }
     //Monstruos tipo C
     for(int i = 0; i < percentMonstersC * (numMonsters - numBoss); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Hellish Baron", foo, pos);
+        Entidad* entidad = new Villano("Hellish Baron", 80, pos);
         Position contenido = {.content = entidad, .tipo = ENTIDAD};
         mazmorra[pos] = &contenido;
     }
@@ -54,17 +54,17 @@ Mazmorra::Mazmorra(int dimension, int numMonsters, int numBoss)
 
     if( numBoss > jefesEasy ){
         int pos = randomPos(dimension);
-        Entidad* jefe = new Jefe("Titan", foo, foo, pos);
+        Entidad* jefe = new Jefe("Titan", 120, pos);
         Position contenido = {.content = jefe, .tipo = ENTIDAD};
         mazmorra[pos] = &contenido;
 
         pos = randomPos(dimension);
-        Entidad* jefe = new Jefe("Dark Lord", foo, foo, pos);
+        Entidad* jefe = new Jefe("Dark Lord", 130, pos);
         Position contenido = {.content = jefe, .tipo = ENTIDAD};
         mazmorra[pos] = &contenido;
     }
     int pos = randomPos(dimension);
-    Entidad* jefe = new Jefe("Chaos", foo, foo, pos, recompensa);
+    Entidad* jefe = new Jefe("Chaos", 140, pos, recompensa);
     Position contenido = {.content = jefe, .tipo = ENTIDAD};
     mazmorra[pos] = &contenido;
 }

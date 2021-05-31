@@ -2,8 +2,8 @@
 
 MainController::MainController() : jugando(true)
 {
-    //Siguiente: nombre, puntosvida, vidamax, pos
-    jugador = new Jugador("Herz", foo, foo, foo);
+    //Siguiente: nombre, vidamax, pos
+    jugador = new Jugador("Herz", 100, 0);
     posicionador = PosController();
     gestor = TomarController();
     pelea = PeleaController();
