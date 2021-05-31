@@ -93,3 +93,8 @@ int View::getDimension() const
             return dimHard;
     }
 }
+
+bool View::getEstadoJuego() const
+{
+    return controlador.getJugando();
+}

@@ -20,6 +20,7 @@ public:
     void actualizarJugadorPos();
     int getDimension() const;
     int convertirPosLineal();
+    bool getEstadoJuego() const;
 };
 
 #endif
