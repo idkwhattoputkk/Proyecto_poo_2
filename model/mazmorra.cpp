@@ -79,9 +79,9 @@ void Mazmorra::setContenido(int pos, Position* contenido)
     mazmorra[pos] = contenido;
 }
 
-void Mazmorra::quitar(int pos)
+void Mazmorra::quitarContenido(int pos)
 {
-    Position vacio = {.content=nullptr, .tipo=VACIO};
+    Position vacio = {.contenido=nullptr, .tipo=VACIO};
     mazmorra[pos] = vacio;
 }
 

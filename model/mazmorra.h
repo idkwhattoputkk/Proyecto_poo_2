@@ -42,12 +42,13 @@ enum Tipo{
     VACIO, ENTIDAD, ITEM
 };
 
+union content{
+    Entidad* entidad;
+    Item* item;
+};
+
 struct Position{
-    union content{
-        Entidad* entidad;
-        Item* item;
-    };
-    
+    content contenido;    
     Tipo tipo;
 };
 
@@ -62,7 +63,7 @@ public:
     Mazmorra(int, int, int);
     Position* getContenido(int) const;
     void setContenido(int, Position*);
-    void quitar(int);
+    void quitarContenido(int);
     int randomPos(int);
     Tipo ocupado(int);
     void actualizarObjetos(int);
