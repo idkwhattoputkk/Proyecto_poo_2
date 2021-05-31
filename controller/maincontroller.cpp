@@ -10,14 +10,17 @@ MainController::MainController() : jugando(true)
 }
 
 MainController::MainController(int dimension, int numMonsters, int numBoss,
-    Dificultad dificultad) : dificultad(dificultad), MainController()
+    Dificultad dificultad) : dificultad(dificultad), jugando(false), MainController()
 {
     mazmorra = Mazmorra(dimension, numMonsters, numBoss);
 }
 
 void MainController::actualizarJugadorPos(int pos)
 {
-    posicionador.mover(&mazmorra, &jugador, pos);
+    Tipo tipo = posicionador.mover(&mazmorra, &jugador, pos);
+    if( tipo != VACIO ){
+        lanzarEvento( tipo, pos );
+    }
 }
 
 void MainController::posicionar(int pos, Position* contenido)
@@ -46,7 +49,9 @@ void MainController::lanzarEvento(Tipo contenido, int pos)
             break;
         case ITEM:
             if( gestor.mensaje(&mazmorra, pos) == true ) 
-                gestor.addInventario(&mazmorra, jugador, pos);
+                if( gestor.addInventario(&mazmorra, jugador, pos) == true ){
+                    terminarJuego();
+                }
             break;
     }
 }
