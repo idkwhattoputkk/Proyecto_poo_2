@@ -38,6 +38,8 @@ enemigos. El caballero Herz, que en el momento de la maldición se encontraba po
 fuera del reino, es el único capaz de salvar el reino de la perdición, para esto deberá
 buscar un legendario artefacto perdido en las mazmorras del norte para
 purificar al reino de Cyradil de la maldición.
+
+
 ![heroe](images/Hertz.PNG)
 
 ### Info
