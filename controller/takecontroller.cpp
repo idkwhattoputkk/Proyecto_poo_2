@@ -4,8 +4,8 @@ TomarController::TomarController() {}
 
 bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
     int opc;
-    Position* contenido = mazmorra->getContenido(pos);
-    Item* item = contenido->content;
+    Position* p = mazmorra->getContenido(pos);
+    Item* item = p->contenido.item;
     item->mensaje();
     do{
         std::cout << "1. Sí\n";
@@ -29,9 +29,9 @@ bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
 }
 
 bool TomarController::addInventario(Mazmorra* mazmorra, Jugador* jugador, int pos){
-    Position* contenido = mazmorra->getContenido(pos);
-    Item* item = contenido->content;
-    if( item->getName() == "Llave del Valhala" ) return true;
+    Position* p = mazmorra->getContenido(pos);
+    Item* item = p->contenido.item;
+    if( item->getNombre() == "Llave del Valhala" ) return true;
     jugador->addInventario(item);
     return false;
 }
