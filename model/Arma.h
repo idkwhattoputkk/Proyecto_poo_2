@@ -1,7 +1,7 @@
 #ifndef ARMA_H
 #define ARMA_H
 
-#include "model/Item.h"
+#include "Item.h"
 
 //Clase arma
 class Arma : public Item{

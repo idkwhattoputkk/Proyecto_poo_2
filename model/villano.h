@@ -16,7 +16,7 @@ private:
 public:
     Villano();
     Villano(string, int, int);
-    void atacar(Entidad*) override;
+    void turno(Entidad*) override;
     Item* soltar() override;
     ~Villano();
 };

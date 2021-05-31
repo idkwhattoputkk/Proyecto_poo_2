@@ -1,7 +1,8 @@
-#ifdef FIGHT_CONTROLLER_H
+#ifndef FIGHT_CONTROLLER_H
 #define FIGHT_CONTROLLER_H
 
 #include "../model/mazmorra.h"
+#include "../model/entidad.h"
 
 class PeleaController
 {

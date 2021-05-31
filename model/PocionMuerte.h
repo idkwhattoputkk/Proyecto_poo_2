@@ -1,7 +1,7 @@
 #ifndef POCIONMUERTE_H
 #define POCIONMUERTE_H
 //includes
-#include "model/Item.h"
+#include "Item.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

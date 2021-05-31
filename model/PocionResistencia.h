@@ -4,7 +4,7 @@
 #ifndef POCIONRESISTENCIA_H
 #define POCIONRESISTENCIA_H
 //includes
-#include "../model/Item.h"
+#include "Item.h"
 
 //clase pocion de resistencia
 class PocionResistencia : public Item

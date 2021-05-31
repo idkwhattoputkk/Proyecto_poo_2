@@ -1,22 +1,23 @@
-#ifdef MAZMORRA_H
+#ifndef MAZMORRA_H
 #define MAZMORRA_H
 
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
 #include <forward_list>
+#include <list>
 #include <queue>
 #include <unordered_map>
-#include "../model/entidad.h"
-#include "../model/Item.h"
-#include "../model/jefe.h"
-#include "../model/villano.h"
-#include "../model/Arma.h"
-#include "../model/PocionAtaque.h"
-#include "../model/PocionEscape.h"
-#include "../model/PocionMuerte.h"
-#include "../model/PocionResistencia.h"
-#include "../model/PocionVida.h"
+#include "entidad.h"
+#include "Item.h"
+#include "jefe.h"
+#include "villano.h"
+#include "Arma.h"
+#include "PocionAtaque.h"
+#include "PocionEscape.h"
+#include "PocionMuerte.h"
+#include "PocionResistencia.h"
+#include "PocionVida.h"
 
 //Dimensiones y numero de monstruos por dificultad
 constexpr int dimEasy = 10;

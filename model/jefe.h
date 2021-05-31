@@ -8,7 +8,7 @@
 #include <vector>
 #include "ataque.h"
 #include "entidad.h"
-#include "item.h"
+#include "Item.h"
 
 using std::string;
 using std::vector;
@@ -23,6 +23,6 @@ public:
     Jefe(string, int, int);
     Jefe(string, int, int, Item*);
     Item* soltar() override;
-    void atacar(Entidad*) override;
+    void turno(Entidad*) override;
 };
 #endif //JEFE_H

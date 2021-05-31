@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Item.h"
 
 using std::string;
 

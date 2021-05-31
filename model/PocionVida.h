@@ -3,7 +3,7 @@
 //
 #ifndef POCIONVIDA_H
 #define POCIONVIDA_H
-#include "model/Item.h"
+#include "Item.h"
 //clase vida
 class PocionVida : public Item
 {
