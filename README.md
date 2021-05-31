@@ -21,6 +21,7 @@ Para el combate cuerpo a cuerpo y a turnos, decidimos utilizar armas basadas en 
 Los villanos se clasifican en dos tipos, **normales** y **jefes**, los jefes son mas fuertes que los normales e indican que esta finalizando el nivel, estos villanos son quienes se encargaran de combatir y hacerle la vida imposible a nuestro heroe. ***algo de la logica en la siguiente imagen***.
 ![villanos](/images/villains.jpeg)
 ![jefes](/images/jefes.jpeg)
+![Villain](images/enemigos.PNG)
 ### Potions
 En cuanto a las pociones decidimos tener 5 pociones de las cuales 2 de esas cuentan con un mecanimos de aletoriedad para hacer efecto (*"suerte"*). Las otras 3 restantes haran efecto apenas sean usadas. Ademas se incluyo una recompensa que puede obtener en alguna ubicacion del mapa. Estas pociones le ayudaran a nuestro caballero en su cruzada para salvar su reino, cada una tiene una funcion unica y especial.
 ***algo de la logica en la siguiente imagen***.
@@ -37,6 +38,7 @@ enemigos. El caballero Herz, que en el momento de la maldición se encontraba po
 fuera del reino, es el único capaz de salvar el reino de la perdición, para esto deberá
 buscar un legendario artefacto perdido en las mazmorras del norte para
 purificar al reino de Cyradil de la maldición.
+![heroe](images/Hertz.PNG)
 
 ### Info
 Puedes encontrar mas informacion con presicion [aqui.](https://sway.office.com/5lfiMzez5y7Q6kMz)
