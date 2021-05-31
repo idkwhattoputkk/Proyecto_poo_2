@@ -27,6 +27,5 @@ Puedes encontrar mas informacion con presicion [aqui.](https://sway.office.com/5
 > dale un vistazo.
 
 ### Uml
-![alt text][logo]
-[logo]: images/THE_GAME.jpg
+![UML](/images/THE_GAME.jpg)
 ## Evaluciones
