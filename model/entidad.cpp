@@ -1,14 +1,12 @@
-
 #include "entidad.h"
 
 // Constructor
 Entidad::Entidad() {}
 
-Entidad::Entidad(string nombre, int puntosVida, int x, int y){
-    this->nombre = nombre;
-    this->puntosVida = puntosVida;
-    this->x = x;
-    this->y = y;
+Entidad::Entidad(string nombre, int vidaMax, int pos):
+    nombre(nombre), vidaMax(vidaMax), pos(pos) 
+{
+    puntosVida = vidaMax;
 }
 
 string Entidad::getName(){
@@ -30,4 +28,10 @@ void Entidad::setPos(int pos){
 void Entidad::setHP(int HP){
     this->puntosVida = HP;
 }
+
+int Entidad::getVidaMax() const
+{
+    return vidaMax;
+}
+
 Entidad::~Entidad(){}
