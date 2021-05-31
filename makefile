@@ -1,46 +1,46 @@
-programa: main view peleaController mainController posController tomarController arma ataque\
-		  entidad item jefe jugador mazmorra pocionAtaque pocionEscape pocionMuerte\
-		  pocionResistencia pocionVida villano
+programa: main.o view.o peleaController.o mainController.o posController.o tomarController.o arma.o ataque.o\
+		  entidad.o item.o jefe.o jugador.o mazmorra.o pocionAtaque.o pocionEscape.o pocionMuerte.o\
+		  pocionResistencia.o pocionVida.o villano.o
 	g++ -o Juego main.o view.o fightcontroller.o maincontroller.o poscontroller.o takecontroller.o Arma.o\
 		   ataque.o entidad.o Item.o jefe.o jugador.o mazmorra.o PocionAtaque.o PocionEscape.o PocionMuerte.o\
 		   PocionResistencia.o PocionVida.o villano.o
-main: main.cpp view/view.h
+main.o: main.cpp view/view.h
 	g++ -c main.cpp
-view: view/view.cpp view/view.h
+view.o: view/view.cpp view/view.h
 	g++ -c view/view.cpp
-peleaController: controller/fightcontroller.cpp controller/fightcontroller.h
+peleaController.o: controller/fightcontroller.cpp controller/fightcontroller.h
 	g++ -c controller/fightcontroller.cpp
-mainController: controller/maincontroller.cpp controller/maincontroller.h
+mainController.o: controller/maincontroller.cpp controller/maincontroller.h
 	g++ -c controller/maincontroller.cpp
-posController: controller/poscontroller.cpp controller/poscontroller.h
+posController.o: controller/poscontroller.cpp controller/poscontroller.h
 	g++ -c controller/poscontroller.cpp
-tomarController: controller/takecontroller.cpp controller/takecontroller.h
+tomarController.o: controller/takecontroller.cpp controller/takecontroller.h
 	g++ -c controller/takecontroller.cpp
-arma: model/Arma.cpp model/Arma.h
+arma.o: model/Arma.cpp model/Arma.h
 	g++ -c model/Arma.cpp
-ataque: model/ataque.cpp model/ataque.h
+ataque.o: model/ataque.cpp model/ataque.h
 	g++ -c model/ataque.cpp
-entidad: model/entidad.cpp model/entidad.h
+entidad.o: model/entidad.cpp model/entidad.h
 	g++ -c model/entidad.cpp
-item: model/Item.cpp model/Item.h
+item.o: model/Item.cpp model/Item.h
 	g++ -c model/Item.cpp
-jefe: model/jefe.cpp model/jefe.h
+jefe.o: model/jefe.cpp model/jefe.h
 	g++ -c model/jefe.cpp
-jugador: model/jugador.cpp model/jugador.h
+jugador.o: model/jugador.cpp model/jugador.h
 	g++ -c model/jugador.cpp
-mazmorra: model/mazmorra.cpp model/mazmorra.h
+mazmorra.o: model/mazmorra.cpp model/mazmorra.h
 	g++ -c model/mazmorra.cpp
-pocionAtaque: model/PocionAtaque.cpp model/PocionAtaque.h
+pocionAtaque.o: model/PocionAtaque.cpp model/PocionAtaque.h
 	g++ -c model/PocionAtaque.cpp
-pocionEscape: model/PocionEscape.cpp model/PocionEscape.h
+pocionEscape.o: model/PocionEscape.cpp model/PocionEscape.h
 	g++ -c model/PocionEscape.cpp
-pocionMuerte: model/PocionMuerte.cpp model/PocionMuerte.h
+pocionMuerte.o: model/PocionMuerte.cpp model/PocionMuerte.h
 	g++ -c model/PocionMuerte.cpp
-pocionResistencia: model/PocionResistencia.cpp model/PocionResistencia.h
+pocionResistencia.o: model/PocionResistencia.cpp model/PocionResistencia.h
 	g++ -c model/PocionResistencia.cpp
-pocionVida: model/PocionVida.cpp model/PocionVida.h
+pocionVida.o: model/PocionVida.cpp model/PocionVida.h
 	g++ -c model/PocionVida.cpp
-villano: model/villano.cpp model/villano.h
+villano.o: model/villano.cpp model/villano.h
 	g++ -c model/villano.cpp
 
 clean: #comando para borrar los .o
