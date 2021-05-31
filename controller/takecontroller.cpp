@@ -1,5 +1,6 @@
-TomarController::TomarController(){
-}
+#include "takecontroller.h"
+
+TomarController::TomarController() {}
 
 bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
     int opc;
@@ -8,7 +9,7 @@ bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
     item->mensaje();
     do{
         std::cout << "1. Sí\n";
-        std::cout << "2. No\n\n>";
+        std::cout << "2. No\n\n> ";
         try{
             std::cin >> opc;
         }catch( std::ios_base::failure &e ){
@@ -27,8 +28,10 @@ bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
     }while(opc < 1 || opc > 2);
 }
 
-void TomarController::addInventario(Mazmorra* mazmorra, Jugador* jugador, int pos){
+bool TomarController::addInventario(Mazmorra* mazmorra, Jugador* jugador, int pos){
     Position* contenido = mazmorra->getContenido(pos);
     Item* item = contenido->content;
+    if( item->getName() == "Llave del Valhala" ) return true;
     jugador->addInventario(item);
+    return false;
 }

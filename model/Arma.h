@@ -1,21 +1,19 @@
-//
-// Created by Emanuel Umaña on 25/05/21.
-//
-
 #ifndef ARMA_H
 #define ARMA_H
-//includes
+
 #include "model/Item.h"
 
 //Clase arma
 class Arma : public Item{
 private: //atributos
-    static const int POTENCIA;
+    const int POTENCIA;
 public: //metodos
     Arma();
-    Arma(int);
+    //Nombre,durabilidad,desgaste,frecuenciaAparicion,frecuenciaDesaparicion, Potencia
+    Arma(string, int, int, int, int, int);
     int getPotencia();
-
+    void usar(Entidad*, Entidad*) override;
+    ~Arma() override;
 };
 
 #endif //ARMA_H

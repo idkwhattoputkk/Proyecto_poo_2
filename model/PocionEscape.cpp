@@ -1,26 +1,33 @@
-#include "model/PocionEscape.h"
+#include "PocionEscape.h"
 // Variables constantes y estaticas para determinar si sera un exito utilizar la pocion
 const int PocionEscape::MIN = 1;
 const int PocionEscape::MAX = 10;
-const int PocionEscape::NUMEXITO = 6;
-PocionEscape::PocionEscape()
-{
-    
-}
+const int PocionEscape::NUMEXITO = 5;
 
-PocionEscape::~PocionEscape()
-{
-    
-}
+PocionEscape::PocionEscape() {}
+
+PocionEscape::PocionEscape(string nombre, int durabilidad, int desgaste, int frecAparicion, 
+    int frecDesaparicion) : Item(nombre, durabilidad, desgaste, frecAparicion, 
+    frecDesaparicion) {}
+
+PocionEscape::~PocionEscape() {}
 
 bool PocionEscape::hacerEfecto() {
     srand(time(NULL));
-    bool flag;
-    numAleatorio = 1+rand()%10;
-    if(numAleatorio == NUMEXITO){
-        flag = true;
-    }else{
-        flag = false;
+    numAleatorio = MIN + rand() % (MAX + 1);
+    if(numAleatorio >= NUMEXITO){
+        std::cout << "Escapas con exito!\n";
+        return true;
     }
-    return flag;
+    else{
+        std::cout << "Tu enemigo no te deja ir!\n";
+        return false;
+    }
+}
+
+void PocionEscape::usar(Entidad* jugador, Entidad* enemigo) override
+{
+    if( hacerEfecto() ) jugador->setEscape(true);
+    jugador->eliminarItem(pocket);
+    ~PocionMuerte();
 }

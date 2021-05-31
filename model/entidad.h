@@ -11,18 +11,20 @@ class Entidad {
 protected:
     string nombre;
     int puntosVida;
-    const int vidaMax;
+    int vidaMax;
     int pos;
 
 public:
     Entidad();
-    Entidad(string, int, int, int);
+    Entidad(string, int, int);
     string getName();
     int getHP();
     int getPos() const;
     void setPos(int);
     void setHP(int);
-    virtual void atacar(Entidad*) = 0;
+    int getVidaMax() const;
+    virtual void turno(Entidad*) = 0;
+    virtual Item* soltar() = 0;
     ~Entidad();
 };
 #endif //ENTIDAD_H

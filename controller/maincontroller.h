@@ -9,22 +9,30 @@
 
 using std::cout;
 
+enum Dificultad{
+    EASY, HARD
+};
+
 class MainController
 {
 private:
     Mazmorra mazmorra;
     bool jugando;
-    Entidad* jugador;
+    Jugador* jugador;
+    Dificultad dificultad;
     PosController posicionador;
     TomarController gestor;
     PeleaController pelea;
 public:
     MainController();
+    MainController(int, int, int, Dificultad);
     void actualizarJugadorPos(int);
     void posicionar(int, Position*);
     bool terminarJuego();
     void mostrarGameStatus(string);
     void lanzarEvento(Tipo, int);
+    bool getJugando() const;
+    Dificultad getDificultad() const;
 };
 
 #endif

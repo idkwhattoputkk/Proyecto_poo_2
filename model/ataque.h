@@ -7,7 +7,6 @@
 using std::string;
 
 class Ataque {
-
 private:
     string nombre;
     const int potencia;
@@ -17,6 +16,5 @@ public:
     string getName();
     int getPotencia();
     ~Ataque();
-
 };
 #endif //ATAQUE_H

@@ -1,26 +1,49 @@
 #include "jugador.h"
 
+constexpr int MIN = 1;
+constexpr int MAX = 10;
+constexpr int NUMEXITO = 6;
+
 const int Jugador::bolsillos = 10;
 
-Jugador::Jugador(): numItems(0)
+Jugador::Jugador(): numItems(0), escape(false)
 {
     for(int i = 1; i <= bolsillos; ++i)
         inventario.emplace(i, nullptr);
 }
 
-Jugador::Jugador(string nombre, int puntosVida, int x, int y): 
-    Entidad(nombre, puntosVida, x, y), Jugador() {}
+Jugador::Jugador(string nombre, int vidaMax, int pos): 
+    Entidad(nombre, vidaMax, pos), Jugador() {}
 
 int Jugador::getNumItems() const
 {
     return numItems;
 }
 
+bool Jugador::getEscape() const
+{
+    return escape;
+}
+
+void Jugador::setEscape(bool escapado)
+{
+    escape = escapado;
+}
+
 void Jugador::mostrarInventario(){
+    float usosLeft;
     for (auto it = inventario.begin(); it != inventario.end(); ++it){
-        if( it->second != nullptr )
-            cout << it->first << ". " << it->second->getNombre() << endl;
+        if( it->second != nullptr ){
+            usosLeft = it->second->getUsos() / (float) it->second->getDesgaste();
+            cout << it->first << ". " << it->second->getNombre();
+            cout << "\tUsos restantes: " << ceil(usosLeft) << endl;
+        }
     }
+}
+
+int Jugador::getATK() const
+{
+    return puntosATK;
 }
 
 void Jugador::setATK(int puntosATK){
@@ -38,6 +61,7 @@ void Jugador::addInvetario(Item* item){
             if( it->second != nullptr ){
                 inventario[it->first] = item;
                 ++numItems;
+                item->setPocket(it->first);
                 break;
             }
     } else cout >> "Inventario lleno" >> endl;
@@ -49,12 +73,13 @@ int Jugador::eliminarItem(int itemPos)
     --numItems;
 }
 
-void Jugador::atacar(Entidad* enemigo) override
+void Jugador::turno(Entidad* enemigo) override
 {
     int opc;
     do{
         cout << "1. Golpe directo\n";
-        cout << "2. Usar item\n\n> ";
+        cout << "2. Usar item\n";
+        cout << "3. Escapar\n\n> "
         cin >> opc;
         switch(opc){
             case 1:
@@ -70,6 +95,33 @@ void Jugador::atacar(Entidad* enemigo) override
                 }catch(std::out_of_range& e){
                     cout << "Item inexistente\n";
                 }
+            case 3:
+                if( this->escapar() == true ) escape = true;
         }
     } while(opc != 0);
+}
+
+//Este método no es relevante en esta clase
+Item* Jugador::soltar() override
+{
+    return nullptr;
+}
+
+bool Jugador::escapar()
+{
+    srand(time(NULL));
+    int numAleatorio = MIN + rand() % (MAX + 1);
+    if(numAleatorio >= NUMEXITO){
+        std::cout << "Escapas con exito!\n";
+        return true;
+    }
+    else{
+        std::cout << "Tu enemigo no te deja ir!\n";
+        return false;
+    }
+}
+
+Item* Jugador::consultar(int bolsillo)
+{
+    return inventario.at(bolsillo);
 }

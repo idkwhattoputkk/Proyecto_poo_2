@@ -9,7 +9,7 @@ class TomarController
 public:
     TomarController();
     bool mensaje(Mazmorra*, int);
-    void addInventario(Mazmorra*, Entidad*, int);
+    bool addInventario(Mazmorra*, Jugador*, int);
 };
 
 #endif
