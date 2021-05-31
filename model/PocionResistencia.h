@@ -5,6 +5,13 @@
 #define POCIONRESISTENCIA_H
 //includes
 #include "Item.h"
+#include "entidad.h"
+#include "jugador.h"
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 //clase pocion de resistencia
 class PocionResistencia : public Item

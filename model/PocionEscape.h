@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include "entidad.h"
+#include "jugador.h"
 //Clase pocion escape
 class PocionEscape: public Item
 {

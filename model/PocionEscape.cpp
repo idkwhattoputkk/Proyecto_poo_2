@@ -25,9 +25,14 @@ bool PocionEscape::hacerEfecto() {
     }
 }
 
-void PocionEscape::usar(Entidad* jugador, Entidad* enemigo) override
+void PocionEscape::usar(Entidad* jugador, Entidad* enemigo)
 {
-    if( hacerEfecto() ) jugador->setEscape(true);
-    jugador->eliminarItem(pocket);
-    ~PocionMuerte();
+    Jugador* player;
+    do{
+        player = dynamic_cast<Jugador*>(jugador);
+        if( player == nullptr ) continue;
+    }while( true );
+    if( hacerEfecto() ) player->setEscape(true);
+    player->eliminarItem(pocket);
+    delete this;
 }

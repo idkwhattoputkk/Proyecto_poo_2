@@ -23,11 +23,16 @@ bool PocionMuerte::hacerEfecto()
     }
 }
 
-void PocionMuerte::usar(Entidad* jugador, Entidad* enemigo) override
+void PocionMuerte::usar(Entidad* jugador, Entidad* enemigo)
 {
+    Jugador* player;
+    do{
+        player = dynamic_cast<Jugador*>(jugador);
+        if( player == nullptr ) continue;
+    }while( true );
     if( hacerEfecto() ) enemigo->setHP(0);
-    jugador->eliminarItem(pocket);
-    ~PocionMuerte();
+    player->eliminarItem(pocket);
+    delete this;
 }
 
 PocionMuerte::~PocionMuerte() {}

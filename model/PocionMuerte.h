@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "entidad.h"
+#include "jugador.h"
 //clase de pocion de muerte
 class PocionMuerte: public Item{
 private://atributos

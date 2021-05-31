@@ -1,28 +1,32 @@
 #include "PocionVida.h"
 
 //Inicializa la variable PI que es estática y constante
-const int PocionVida::PUNTOSVIDA = 10;
+const int PocionVida::PUNTOSVIDA = 70;
 
 //constructores y metodos de pocion de vida.
 PocionVida::PocionVida() {}
 
 PocionVida::PocionVida(string nombre, int durabilidad, int desgaste, int frecAparicion, 
-    int frecDesaparicion, int puntosVida) :
-    PUNTOSVIDA(puntosVida), Item(nombre, durabilidad, desgaste, frecAparicion, 
+    int frecDesaparicion) : Item(nombre, durabilidad, desgaste, frecAparicion, 
     frecDesaparicion) {}
 
 int PocionVida::getHP() {
     return this->PUNTOSVIDA;
 }
 
-void usar(Entidad* jugador, Entidad* enemigo) override
+void PocionVida::usar(Entidad* jugador, Entidad* enemigo)
 {
+    Jugador* player;
+    do{
+        player = dynamic_cast<Jugador*>(jugador);
+        if( player == nullptr ) continue;
+    }while( true );
     if( jugador->getHP() + PUNTOSVIDA < jugador->getVidaMax() )
         jugador->setHP( jugador->getHP() + PUNTOSVIDA );
     else jugador->setHP( jugador->getVidaMax() );
 
-    jugador->eliminarItem(pocket);
-    ~PocionVida();
+    player->eliminarItem(pocket);
+    delete this;
 }
 
 PocionVida::~PocionVida() {}

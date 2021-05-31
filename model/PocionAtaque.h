@@ -2,6 +2,8 @@
 #define POCIONATAQUE_H
 //includes
 #include "Item.h"
+#include "entidad.h"
+#include "jugador.h"
 
 class PocionAtaque : public Item
 {
@@ -10,7 +12,7 @@ private:
 public:
     PocionAtaque();
     //Nombre,durabilidad,Desgaste,frecAparicion,frecDesaparicion,PUNTOSATAQUE
-    PocionAtaque(string, int, int, int, int, int);
+    PocionAtaque(string, int, int, int, int);
     int getATK();
     void usar(Entidad*, Entidad*) override;
     ~PocionAtaque();
