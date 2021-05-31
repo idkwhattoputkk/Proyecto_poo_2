@@ -1,6 +1,7 @@
-#ifdef POS_CONTROLLER_H
+#ifndef POS_CONTROLLER_H
 #define POS_CONTROLLER_H
 
+#include "../model/jugador.h"
 #include "../model/mazmorra.h"
 
 class PosController

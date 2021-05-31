@@ -11,7 +11,9 @@ Tipo PosController::mover(Mazmorra* mazmorra, Jugador* jugador, int pos)
 {   
     Tipo tipo = ocupado(mazmorra, pos);
     if( tipo != VACIO ) return tipo;
-    mazmorra->setContenido(pos, jugador);
+    Position p = {.tipo = ENTIDAD};
+    p.contenido.entidad = jugador;
+    mazmorra->setContenido(pos, &p);
     mazmorra->quitarContenido( pos );
     jugador->setPos(pos);
     return tipo;
