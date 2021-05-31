@@ -26,7 +26,7 @@ En cuanto a las pociones decidimos tener 5 pociones de las cuales 2 de esas cuen
 ***algo de la logica en la siguiente imagen***.
 ![items](/images/items.jpeg)
 ###  Mechanics
-Las mecanicas para utilizar las dos pociones con *"suerte"* o aleatoriedad las cuales son ***Pocion de muerte*** y ***Pocion de escape***, se basan en un rango entre dos numeros fijos y un numero al azar generado por codigo que si es esta en este rango y ademas es igual a un numero **X** fijo definido previamente esta hara efecto, de lo contrario no funcionara.
+Las mecanicas para utilizar las dos pociones con *"suerte"* o aleatoriedad las cuales son ***Pocion de muerte*** y ***Pocion de escape***, se basan en un rango entre dos numeros fijos y un numero al azar generado por codigo que si es esta en este rango y ademas es mayor o igual a un numero **X** fijo definido previamente esta hara efecto, de lo contrario no funcionara.
 ## Philosophy
 El segundo proyecto de *POO* es un juego de pelea por turnos que nos toca desarrollar como estudiantes conformando grupos de maximo 4 estudiantes, con el proposito de poner a prueba las diferentes tematicas vistas en el curso codificando dicho proyecto.
 
