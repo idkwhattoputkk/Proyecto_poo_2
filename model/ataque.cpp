@@ -1,6 +1,6 @@
 #include "ataque.h"
 
-Ataque::Ataque(){}
+Ataque::Ataque(): potencia(0){}
 
 Ataque::Ataque(string nombre, int potencia): nombre(nombre),
     potencia(potencia) {}
