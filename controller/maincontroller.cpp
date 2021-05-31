@@ -10,14 +10,14 @@ MainController::MainController() : jugando(true)
 }
 
 MainController::MainController(int dimension, int numMonsters, int numBoss,
-    Dificultad dificultad) : dificultad(dificultad), jugando(false), MainController()
+    Dificultad dificultad) : dificultad(dificultad), jugando(false)
 {
     mazmorra = Mazmorra(dimension, numMonsters, numBoss);
 }
 
 void MainController::actualizarJugadorPos(int pos)
 {
-    Tipo tipo = posicionador.mover(&mazmorra, &jugador, pos);
+    Tipo tipo = posicionador.mover(&mazmorra, jugador, pos);
     if( tipo != VACIO ){
         lanzarEvento( tipo, pos );
     }

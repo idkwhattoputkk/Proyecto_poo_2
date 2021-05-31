@@ -1,4 +1,4 @@
-#ifdef MAIN_CONTROLLER_H
+#ifndef MAIN_CONTROLLER_H
 #define MAIN_CONTROLLER_H
 
 #include <iostream>
@@ -8,6 +8,7 @@
 #include "../model/mazmorra.h"
 
 using std::cout;
+using std::endl;
 
 enum Dificultad{
     EASY, HARD
