@@ -2,6 +2,7 @@
 #define ITEM_H
 //includes
 #include <string>
+#include "model/entidad.h"
 
 using std::string;
 //Class item
