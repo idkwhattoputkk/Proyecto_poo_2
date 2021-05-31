@@ -1,7 +1,3 @@
-//
-// Created by Emanuel Umaña on 25/05/21.
-//
-
 #ifndef ITEM_H
 #define ITEM_H
 //includes
@@ -10,25 +6,32 @@
 using std::string;
 //Class item
 class Item {
-    // Attributes and constants
 protected:
     string nombre;
-    static const int DURABILIDAD;
-    int desgaste;
-    int frecuenciaAparicion;
-    int frecuenciaDesaparicion;
-    int x;
-    int y;
+    const int DURABILIDAD;
+    const int frecuenciaAparicion;
+    const int frecuenciaDesaparicion;
+    int usos, pocket, desgaste, pos, existencia;
 public://Metodos
-    virtual ~Item();
     Item();
-    Item(string, int, int, int);
+    Item(string,int,int,int,int);
+    Item(const Item&);
     virtual void usar(Entidad*, Entidad*) = 0;
     void mensaje();
     string getNombre() const;
-    int getX() const;
-    int getY() const;
-    void setX(int x);
-    void setY(int y);
+    int getPos() const;
+    void setPos(int);
+    int getPocket() const;
+    void setPocket(int);
+    int getUsos() const;
+    void setUsos(int);
+    int getDesgaste() const;
+    void setDesgaste(int);
+    int getDurabilidad() const;
+    int getExistencia() const;
+    void setExistencia(int);
+    int getAparicion() const;
+    int getDesaparicion() const;
+    virtual ~Item();
 };
 #endif //ITEM_H
