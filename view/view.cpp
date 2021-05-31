@@ -13,6 +13,12 @@ View::View(): jugadorX(0), jugadorY(0)
     }
 }
 
+View::jugar(){
+    do{
+        actualizarJugadorPos();
+    }while (getEstadoJuego() == false);
+}
+
 Dificultad View::setDificultad()
 {
     int opc;

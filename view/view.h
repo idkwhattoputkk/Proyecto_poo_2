@@ -16,6 +16,7 @@ private:
     int jugadorX, jugadorY;
 public:
     View();
+    void jugar();
     Dificultad setDificultad();
     void actualizarJugadorPos();
     int getDimension() const;
