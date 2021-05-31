@@ -19,12 +19,16 @@ Es un juego basado en [C++](https://en.wikipedia.org/wiki/C%2B%2B), utilizando h
 Para el combate cuerpo a cuerpo y a turnos, decidimos utilizar armas basadas en estos combates, como lo son lanzas, cuchillos, dagas, etc. esto para dar un ambiente mas a peleas de este estilo que requiere el juego en vez del estilo *"shooter"*. Ademas, estas armas son quienes le brindaran un *boost* de daño para derrotar a los enemigos que impidan culminar la cruzada de nuestro caballero con exito.
 ### Villains
 Los villanos se clasifican en dos tipos, **normales** y **jefes**, los jefes son mas fuertes que los normales e indican que esta finalizando el nivel, estos villanos son quienes se encargaran de combatir y hacerle la vida imposible a nuestro heroe. ***algo de la logica en la siguiente imagen***.
+
+
 ![villanos](/images/villains.jpeg)
 ![jefes](/images/jefes.jpeg)
 ![Villain](images/enemigos.PNG)
 ### Potions
 En cuanto a las pociones decidimos tener 5 pociones de las cuales 2 de esas cuentan con un mecanimos de aletoriedad para hacer efecto (*"suerte"*). Las otras 3 restantes haran efecto apenas sean usadas. Ademas se incluyo una recompensa que puede obtener en alguna ubicacion del mapa. Estas pociones le ayudaran a nuestro caballero en su cruzada para salvar su reino, cada una tiene una funcion unica y especial.
 ***algo de la logica en la siguiente imagen***.
+
+
 ![items](/images/items.jpeg)
 ###  Mechanics
 Las mecanicas para utilizar las dos pociones con *"suerte"* o aleatoriedad las cuales son ***Pocion de muerte*** y ***Pocion de escape***, se basan en un rango entre dos numeros fijos y un numero al azar generado por codigo que si es esta en este rango y ademas es mayor o igual a un numero **X** fijo definido previamente esta hara efecto, de lo contrario no funcionara.
