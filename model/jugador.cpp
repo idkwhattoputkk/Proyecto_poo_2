@@ -13,7 +13,7 @@ Jugador::Jugador(): numItems(0), escape(false), puntosATK(20)
 }
 
 Jugador::Jugador(string nombre, int vidaMax, int pos):
-    Entidad(nombre, vidaMax, pos), Jugador() {}
+    Entidad(nombre, vidaMax, pos) {}
 
 int Jugador::getNumItems() const
 {
@@ -50,12 +50,7 @@ void Jugador::setATK(int puntosATK){
     this->puntosATK = puntosATK;
 }
 
-void Jugador::usar(int itemPos){
-    Item* item = inventario[itemPos];
-    item->usar();
-}
-
-void Jugador::addInvetario(Item* item){
+void Jugador::addInventario(Item* item){
     if( numItems < bolsillos ){
         for(auto it = inventario.begin(); it != inventario.end(); ++it)
             if( it->second != nullptr ){
@@ -64,22 +59,22 @@ void Jugador::addInvetario(Item* item){
                 item->setPocket(it->first);
                 break;
             }
-    } else cout >> "Inventario lleno" >> endl;
+    } else cout << "Inventario lleno" << endl;
 }
 
-int Jugador::eliminarItem(int itemPos)
+void Jugador::eliminarItem(int itemPos)
 {
     inventario[itemPos] = nullptr;
     --numItems;
 }
 
-void Jugador::turno(Entidad* enemigo) override
+void Jugador::turno(Entidad* enemigo)
 {
     int opc;
     do{
         cout << "1. Golpe directo\n";
         cout << "2. Usar item\n";
-        cout << "3. Escapar\n\n> "
+        cout << "3. Escapar\n\n> ";
         cin >> opc;
         switch(opc){
             case 1:
@@ -102,7 +97,7 @@ void Jugador::turno(Entidad* enemigo) override
 }
 
 //Este método no es relevante en esta clase
-Item* Jugador::soltar() override
+Item* Jugador::soltar()
 {
     return nullptr;
 }

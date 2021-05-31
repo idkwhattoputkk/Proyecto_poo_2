@@ -14,6 +14,7 @@ using std::string;
 using std::unordered_map;
 using std::cout;
 using std::cin;
+using std::endl;
 using std::pair;
 
 class Jugador : public Entidad
@@ -36,7 +37,7 @@ public:
     void setATK(int);
     Item* consultar(int);
     void addInventario(Item*);
-    int eliminarItem(int);
+    void eliminarItem(int);
     void turno(Entidad*) override;
     Item* soltar() override;
     bool escapar();
