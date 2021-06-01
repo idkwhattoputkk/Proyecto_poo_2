@@ -6,9 +6,10 @@ bool TomarController::mensaje(Mazmorra* mazmorra, int pos){
     int opc;
     Position* p = mazmorra->getContenido(pos);
     Item* item = p->contenido.item;
+    std::cout << "Objeto: " << item->getNombre() << std::endl;
     item->mensaje();
     do{
-        std::cout << "1. Sí\n";
+        std::cout << "1. Si\n";
         std::cout << "2. No\n\n> ";
         try{
             std::cin >> opc;
