@@ -55,7 +55,7 @@ void View::actualizarJugadorPos()
         std::cout << "Mover jugador hacia:\n1. Arriba\n2. Abajo\n3. Izquierda\n";
         std::cout << "4. Derecha\n> ";
         try{
-            std::cin >> mov;
+                std::cin >> mov;
         }catch( std::ios_base::failure &e ){
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
