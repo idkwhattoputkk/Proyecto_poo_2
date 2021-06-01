@@ -5,7 +5,9 @@ PeleaController::PeleaController(): turnos(0) {}
 //Retorna verdadero cuando vences, y falso si mueres
 bool PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
 {
+    std::cout << "BATALLA!\n";
     Position* enemigo = mazmorra->getContenido(pos);
+    std:: cout << "Contra: " << enemigo->contenido.entidad->getName() << std::endl;
     do{
         Jugador* player = dynamic_cast<Jugador*>(jugador);
         if( player == nullptr ) continue;
