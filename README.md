@@ -10,7 +10,7 @@ Como estudiantes del curso de POO (Pogramacion Orientada a Objetos), nos pusimos
   * [History](#history)
   * [More info](#info)
   * [Class Diagram](#uml)
-* [Auto Evaluacion](#evaluciones)
+* [Auto Evaluacion](/Autoevaluaciones/)
 * [Wiki](https://github.com/idkwhattoputkk/Proyecto_poo_2/wiki)
 
 ## Documentation
@@ -52,5 +52,3 @@ Puedes encontrar mas informacion con presicion [aqui.](https://sway.office.com/5
 
 ### UML
 ![UML](/images/THE_GAME.jpg)
-## Evaluciones
-> TODO!
