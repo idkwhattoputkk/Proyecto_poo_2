@@ -44,4 +44,4 @@ villano.o: model/villano.cpp model/villano.h
 	g++ -c model/villano.cpp
 
 clean: #comando para borrar los .o
-	del *.o, del *.exe
+	del *.o
