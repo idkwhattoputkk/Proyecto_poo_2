@@ -25,32 +25,43 @@ Mazmorra::Mazmorra(int dimension, int numMonsters, int numBoss)
 {
     //Inicialización del mapa
     for(int i = 0; i < dimension * dimension; ++i){
-        Position p = {.tipo = VACIO};
-        mazmorra.emplace(i, &p);
+        Position* p = new Position;
+        p->tipo = VACIO;
+        p->contenido.entidad = nullptr;
+        mazmorra.emplace( i, p );
     }
+
     //Monstruos tipo A
-    for(int i = 0; i < percentMonstersA * (numMonsters - numBoss); ++i){
+    vector<Entidad*> monsters(percentMonstersA * (numMonsters - numBoss), nullptr);
+    vector<Position> positions(percentMonstersA * (numMonsters - numBoss));
+    for(auto i = 0; i < positions.size(); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Lich", 60, pos);
-        Position p = {.tipo = ENTIDAD};
-        p.contenido.entidad = entidad;
-        mazmorra[pos] = &p;
+        monsters[i] = new Villano("Lich", 60, pos);
+        positions[i].tipo = ENTIDAD;
+        positions[i].contenido.entidad = monsters[i];
+        mazmorra[pos] = &positions[i];
     }
     //Monstruos tipo B
-    for(int i = 0; i < percentMonstersB * (numMonsters - numBoss); ++i){
+    monsters.resize(percentMonstersB * (numMonsters - numBoss));
+    vector<Position> positionsB(percentMonstersB * (numMonsters - numBoss));
+    positions.clear();
+    for(auto i = 0; i < positionsB.size(); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Cyberdemon", 70, pos);
-        Position p = {.tipo = ENTIDAD};
-        p.contenido.entidad = entidad;
-        mazmorra[pos] = &p;
+        monsters[i] = new Villano("Cyberdemon", 70, pos);
+        positionsB[i].tipo = ENTIDAD;
+        positionsB[i].contenido.entidad = monsters[i];
+        mazmorra[pos] = &positionsB[i];
     }
     //Monstruos tipo C
-    for(int i = 0; i < percentMonstersC * (numMonsters - numBoss); ++i){
+    monsters.resize(percentMonstersC * (numMonsters - numBoss));
+    vector<Position> positionsC(percentMonstersC * (numMonsters - numBoss));
+    positionsB.clear();
+    for(auto i = 0; i < positionsC.size(); ++i){
         int pos = randomPos(dimension);
-        Entidad* entidad = new Villano("Hellish Baron", 80, pos);
-        Position p = {.tipo = ENTIDAD};
-        p.contenido.entidad = entidad;
-        mazmorra[pos] = &p;
+        monsters[i] = new Villano("Hellish Baron", 80, pos);
+        positionsC[i].tipo = ENTIDAD;
+        positionsC[i].contenido.entidad = monsters[i];
+        mazmorra[pos] = &positionsC[i];
     }
     //Jefes
     Item* recompensa = new Item("Llave del Valhala",1,1,1,1);
@@ -88,6 +99,8 @@ void Mazmorra::setContenido(int pos, Position* contenido)
 void Mazmorra::quitarContenido(int pos)
 {
     Position vacio = {.tipo=VACIO};
+    vacio.contenido.entidad = nullptr;
+    vacio.contenido.item = nullptr;
     mazmorra[pos] = &vacio;
 }
 

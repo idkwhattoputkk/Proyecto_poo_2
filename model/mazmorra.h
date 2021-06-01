@@ -6,7 +6,7 @@
 #include <ctime>
 #include <forward_list>
 #include <list>
-#include <queue>
+#include <vector>
 #include <unordered_map>
 #include "entidad.h"
 #include "Item.h"
@@ -18,6 +18,8 @@
 #include "PocionMuerte.h"
 #include "PocionResistencia.h"
 #include "PocionVida.h"
+
+using std::vector;
 
 //Dimensiones y numero de monstruos por dificultad
 constexpr int dimEasy = 10;
