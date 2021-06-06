@@ -60,6 +60,8 @@ private:
     unordered_map<int, Position*> mazmorra;
     forward_list<Item*> listaGenerables;
     list<Item*> listaExistentes;
+    vector<Entidad*> monstersA, monstersB, monstersC, bosses;
+    vector<Position> positionsA, positionsB, positionsC, positionsBosses;
 public:
     Mazmorra();
     Mazmorra(int, int, int);
