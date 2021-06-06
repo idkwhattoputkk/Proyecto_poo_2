@@ -3,7 +3,7 @@
 MainController::MainController() : jugando(true)
 {
     //Siguiente: nombre, vidamax, pos
-    jugador = new Jugador("Herz", 100, 0);
+    //jugador = new Jugador("Herz", 100, 0);
     posicionador = PosController();
     gestor = TomarController();
     pelea = PeleaController();
@@ -18,7 +18,6 @@ MainController::MainController(int dimension, int numMonsters, int numBoss,
 void MainController::actualizarJugadorPos(int pos)
 {
     Tipo tipo = posicionador.mover(&mazmorra, jugador, pos);
-    cout << "Tipo = " << tipo << std::endl;
     if( tipo != VACIO ){
         lanzarEvento( tipo, pos );
     }
