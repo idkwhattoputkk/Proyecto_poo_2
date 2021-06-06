@@ -67,7 +67,7 @@ void View::actualizarJugadorPos()
                 if( jugadorY - 1 >= UpperBorder ){
                     --jugadorY; 
                 }else{
-                    std::cout << "No puedes avanzar por ahí\n";
+                    std::cout << "No puedes avanzar por ahi\n";
                     mov = 0;
                 }
                 break;
@@ -75,7 +75,7 @@ void View::actualizarJugadorPos()
                 if( jugadorY + 1 < dimension ){
                     ++jugadorY; 
                 }else{
-                    std::cout << "No puedes avanzar por ahí\n";
+                    std::cout << "No puedes avanzar por ahi\n";
                     mov = 0;
                 }
                 break;
@@ -83,7 +83,7 @@ void View::actualizarJugadorPos()
                 if( jugadorX - 1 >= LeftBorder ){
                     --jugadorX; 
                 }else{
-                    std::cout << "No puedes avanzar por ahí\n";
+                    std::cout << "No puedes avanzar por ahi\n";
                     mov = 0;
                 }
                 break;
@@ -91,7 +91,7 @@ void View::actualizarJugadorPos()
                 if( jugadorX + 1 < dimension ){
                     ++jugadorX; 
                 }else{
-                    std::cout << "No puedes avanzar por ahí\n";
+                    std::cout << "No puedes avanzar por ahi\n";
                     mov = 0;
                 }
                 break;
