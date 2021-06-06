@@ -12,8 +12,9 @@ Jugador::Jugador(): numItems(0), escape(false), puntosATK(20)
         inventario.emplace(i, nullptr);
 }
 
-Jugador::Jugador(string nombre, int vidaMax, int pos):
-    Entidad(nombre, vidaMax, pos) {}
+Jugador::Jugador(string nombre, int vidaMax, int pos): numItems(0), escape(false), puntosATK(20),
+    Entidad(nombre, vidaMax, pos) {
+}
 
 int Jugador::getNumItems() const
 {
@@ -79,6 +80,7 @@ void Jugador::turno(Entidad* enemigo)
         switch(opc){
             case 1:
                 enemigo->setHP( enemigo->getHP() - puntosATK );
+                opc = 0;
                 break;
             case 2:
                 mostrarInventario();
@@ -87,11 +89,17 @@ void Jugador::turno(Entidad* enemigo)
                 try{
                     Item* item = inventario.at(opc);
                     item->usar(this, enemigo);
+                    opc = 0;
                 }catch(std::out_of_range& e){
                     cout << "Item inexistente\n";
                 }
+                break;
             case 3:
                 if( this->escapar() == true ) escape = true;
+                opc = 0;
+                break;
+            default:
+                cout << "Opcion invalida\n\n";
         }
     } while(opc != 0);
 }
