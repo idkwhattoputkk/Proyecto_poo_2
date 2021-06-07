@@ -148,7 +148,40 @@ void Mazmorra::actualizarObjetos(int turnos)
             p.contenido.item = item_2;*/
             mazmorra[pos]->tipo = ITEM;
             mazmorra[pos]->contenido.item = new Item(*item);
+            mazmorra[pos]->contenido.item->setPos( pos );
             listaExistentes.push_back(mazmorra[pos]->contenido.item);
+        }
+    }
+}
+
+void Mazmorra::graficarMazmorra() {
+    int dimension = sqrt((float)mazmorra.size());
+    for (int i = 0; i < mazmorra.size(); ++i) {
+        if (i == 0) {
+            cout << "I ";
+            continue;
+        }
+        Tipo tipo = mazmorra[i]->tipo;
+        switch (tipo) {
+        case ITEM:
+            cout << "O ";
+            break;
+        case ENTIDAD:
+            if (mazmorra[i]->contenido.entidad->getName() == "Herz") {
+                cout << "P ";
+            }
+            else {
+                cout << "M ";
+            }
+            break;
+        case VACIO:
+            cout << "E ";
+            break;
+        default:
+            cout << "? ";
+        }
+        if ( (i+1) % dimension == 0 ) {
+            cout << endl;
         }
     }
 }

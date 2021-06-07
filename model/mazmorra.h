@@ -7,6 +7,7 @@
 #include <forward_list>
 #include <list>
 #include <vector>
+#include <iostream>
 #include <unordered_map>
 #include "entidad.h"
 #include "Item.h"
@@ -20,6 +21,8 @@
 #include "PocionVida.h"
 
 using std::vector;
+using std::cout;
+using std::endl;
 
 //Dimensiones y numero de monstruos por dificultad
 constexpr int dimEasy = 10;
@@ -71,6 +74,7 @@ public:
     int randomPos(int);
     Tipo ocupado(int);
     void actualizarObjetos(int);
+    void graficarMazmorra();
 };
 
 #endif
