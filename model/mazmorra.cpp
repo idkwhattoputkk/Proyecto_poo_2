@@ -147,7 +147,7 @@ void Mazmorra::actualizarObjetos(int turnos)
             Position p = {.tipo=ITEM};
             p.contenido.item = item_2;*/
             mazmorra[pos]->tipo = ITEM;
-            mazmorra[pos]->contenido.item = new Item(*item);;
+            mazmorra[pos]->contenido.item = new Item(*item);
             listaExistentes.push_back(mazmorra[pos]->contenido.item);
         }
     }
