@@ -13,6 +13,7 @@ int PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
         if( player == nullptr ) continue;
         jugador->turno( enemigo->contenido.entidad );
         this->incrementarTurnos();
+        mazmorra->actualizarObjetos( turnos );
         if( enemigo->contenido.entidad->getHP() <= 0 ){
             std::cout << "\n\nVenciste!\n\n";
             Item* recompensa = enemigo->contenido.entidad->soltar();
@@ -21,7 +22,10 @@ int PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
                 p.contenido.item = recompensa;
                 mazmorra->quitarContenido( pos );
                 mazmorra->setContenido(pos, &p);
-            } else mazmorra->quitarContenido( pos );
+            }
+            else {
+                mazmorra->quitarContenido(pos);
+            }
             return 2;
         }
         if (player->getEscape() == true) {
