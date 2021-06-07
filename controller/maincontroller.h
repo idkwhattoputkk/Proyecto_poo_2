@@ -27,11 +27,11 @@ private:
 public:
     MainController();
     MainController(int, int, int, Dificultad);
-    void actualizarJugadorPos(int);
+    int actualizarJugadorPos(int);
     void posicionar(int, Position*);
     bool terminarJuego();
     void mostrarGameStatus(string);
-    void lanzarEvento(Tipo, int);
+    int lanzarEvento(Tipo, int);
     bool getJugando() const;
     Dificultad getDificultad() const;
 };

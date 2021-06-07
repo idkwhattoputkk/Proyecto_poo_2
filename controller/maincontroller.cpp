@@ -10,16 +10,16 @@ MainController::MainController() : jugando(true)
 }
 
 MainController::MainController(int dimension, int numMonsters, int numBoss,
-    Dificultad dificultad) : dificultad(dificultad), jugando(false)
+    Dificultad dificultad) : dificultad(dificultad), jugando(true)
 {
     mazmorra = Mazmorra(dimension, numMonsters, numBoss);
 }
 
-void MainController::actualizarJugadorPos(int pos)
+int MainController::actualizarJugadorPos(int pos)
 {
     Tipo tipo = posicionador.mover(&mazmorra, jugador, pos);
     if( tipo != VACIO ){
-        lanzarEvento( tipo, pos );
+        return lanzarEvento( tipo, pos );
     }
 }
 
@@ -40,21 +40,34 @@ void MainController::mostrarGameStatus(string msg)
     cout << msg << endl;
 }
 
-void MainController::lanzarEvento(Tipo contenido, int pos)
+int MainController::lanzarEvento(Tipo contenido, int pos)
 {
+    int resultado = 0;
     switch( contenido ){
         case ENTIDAD:
-            if( pelea.batalla(jugador, &mazmorra, pos) == false )
+            resultado = pelea.batalla(jugador, &mazmorra, pos);
+            if ( resultado == 0 ) {
                 terminarJuego();
+                jugando = false;
+                return resultado;
+            }
+            if (resultado == 1) {
+                jugador->setEscape( false );
+                return resultado;
+            }
             break;
         case ITEM:
             if( gestor.mensaje(&mazmorra, pos) == true ) 
                 if( gestor.addInventario(&mazmorra, jugador, pos) == true ){
+                    cout << "HAS GANADO!\n\n";
                     terminarJuego();
+                    jugando = false;
+                    return 2;
                 }
             break;
         default:
-            cout << "NO HAY NADA\n";
+            cout << "NO APLICA\n";
+            return 2;
     }
 }
 
