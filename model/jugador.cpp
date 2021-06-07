@@ -14,6 +14,8 @@ Jugador::Jugador(): numItems(0), escape(false), puntosATK(20)
 
 Jugador::Jugador(string nombre, int vidaMax, int pos): numItems(0), escape(false), puntosATK(20),
     Entidad(nombre, vidaMax, pos) {
+    for (int i = 1; i <= bolsillos; ++i)
+        inventario.emplace(i, nullptr);
 }
 
 int Jugador::getNumItems() const
@@ -53,13 +55,14 @@ void Jugador::setATK(int puntosATK){
 
 void Jugador::addInventario(Item* item){
     if( numItems < bolsillos ){
-        for(auto it = inventario.begin(); it != inventario.end(); ++it)
-            if( it->second != nullptr ){
+        for (auto it = inventario.begin(); it != inventario.end(); ++it) {
+            if (it->second == nullptr) {
                 inventario[it->first] = item;
                 ++numItems;
                 item->setPocket(it->first);
                 break;
             }
+        }
     } else cout << "Inventario lleno" << endl;
 }
 
