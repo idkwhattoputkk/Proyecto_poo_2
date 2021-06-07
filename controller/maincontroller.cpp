@@ -21,6 +21,9 @@ int MainController::actualizarJugadorPos(int pos)
     if( tipo != VACIO ){
         return lanzarEvento( tipo, pos );
     }
+    else {
+        return 3;
+    }
 }
 
 void MainController::posicionar(int pos, Position* contenido)
@@ -64,6 +67,7 @@ int MainController::lanzarEvento(Tipo contenido, int pos)
                     jugando = false;
                     return 2;
                 }
+            return 2;
             break;
         default:
             cout << "NO APLICA\n";
@@ -79,4 +83,8 @@ Dificultad MainController::getDificultad() const
 bool MainController::getJugando() const
 {
     return jugando;
+}
+
+void MainController::graficarMazmorra() {
+    mazmorra.graficarMazmorra();
 }

@@ -34,6 +34,7 @@ public:
     int lanzarEvento(Tipo, int);
     bool getJugando() const;
     Dificultad getDificultad() const;
+    void graficarMazmorra();
 };
 
 #endif
