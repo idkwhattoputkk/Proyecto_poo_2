@@ -3,7 +3,7 @@
 PeleaController::PeleaController(): turnos(0) {}
 
 //Retorna verdadero cuando vences, y falso si mueres
-bool PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
+int PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
 {
     std::cout << "BATALLA!\n";
     Position* enemigo = mazmorra->getContenido(pos);
@@ -14,7 +14,7 @@ bool PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
         jugador->turno( enemigo->contenido.entidad );
         this->incrementarTurnos();
         if( enemigo->contenido.entidad->getHP() <= 0 ){
-            std::cout << "Venciste!\n";
+            std::cout << "\n\nVenciste!\n\n";
             Item* recompensa = enemigo->contenido.entidad->soltar();
             if( recompensa != nullptr ){
                 Position p = {.tipo=ITEM};
@@ -22,13 +22,15 @@ bool PeleaController::batalla(Entidad* jugador, Mazmorra* mazmorra, int pos)
                 mazmorra->quitarContenido( pos );
                 mazmorra->setContenido(pos, &p);
             } else mazmorra->quitarContenido( pos );
-            return true;
+            return 2;
         }
-        if( player->getEscape() == true ) return true;
+        if (player->getEscape() == true) {
+            return 1;
+        }
         
         enemigo->contenido.entidad->turno( jugador );
         if( jugador->getHP() <= 0 ){
-            return false;
+            return 0;
         }
     } while(true);
 }
