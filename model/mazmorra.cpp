@@ -97,15 +97,16 @@ Position* Mazmorra::getContenido(int pos)
 
 void Mazmorra::setContenido(int pos, Position* contenido)
 {
-    mazmorra[pos] = contenido;
+    mazmorra[pos]->contenido.entidad = contenido->contenido.entidad;
+    mazmorra[pos]->contenido.item = contenido->contenido.item;
+    mazmorra[pos]->tipo = contenido->tipo;
 }
 
 void Mazmorra::quitarContenido(int pos)
 {
-    Position vacio = {.tipo=VACIO};
-    vacio.contenido.entidad = nullptr;
-    vacio.contenido.item = nullptr;
-    mazmorra[pos] = &vacio;
+    mazmorra[pos]->contenido.entidad = nullptr;
+    mazmorra[pos]->contenido.item = nullptr;
+    mazmorra[pos]->tipo = VACIO;
 }
 
 int Mazmorra::randomPos(int dimension)
@@ -141,12 +142,13 @@ void Mazmorra::actualizarObjetos(int turnos)
         if( turnos % item->getAparicion() == 0 ){
             int dimension = sqrt( (float)mazmorra.size() );
             int pos = randomPos( dimension );
-            Item* item_2 = new Item( *item );
+            /*Item* item_2 = new Item( *item );
             item_2->setPos(pos);
             Position p = {.tipo=ITEM};
-            p.contenido.item = item_2;
-            mazmorra[pos] = &p;
-            listaExistentes.push_back( item_2 );
+            p.contenido.item = item_2;*/
+            mazmorra[pos]->tipo = ITEM;
+            mazmorra[pos]->contenido.item = new Item(*item);;
+            listaExistentes.push_back(mazmorra[pos]->contenido.item);
         }
     }
 }
