@@ -20,7 +20,7 @@ public:
     Dificultad setDificultad();
     void actualizarJugadorPos();
     int getDimension() const;
-    int convertirPosLineal();
+    int convertirPosLineal(int, int);
     bool getEstadoJuego() const;
 };
 

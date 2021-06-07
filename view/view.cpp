@@ -16,7 +16,7 @@ View::View(): jugadorX(0), jugadorY(0)
 void View::jugar(){
     do{
         actualizarJugadorPos();
-    }while (getEstadoJuego() == false);
+    }while (getEstadoJuego() == true);
 }
 
 Dificultad View::setDificultad()
@@ -51,6 +51,7 @@ void View::actualizarJugadorPos()
 {   
     int dimension = getDimension();
     int mov;
+    int x_pot = 0, y_pot = 0; //Valores potenciales de x e y
     do{
         std::cout << "Mover jugador hacia:\n1. Arriba\n2. Abajo\n3. Izquierda\n";
         std::cout << "4. Derecha\n> ";
@@ -59,39 +60,39 @@ void View::actualizarJugadorPos()
         }catch( std::ios_base::failure &e ){
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Opcion invalida\n";
+            std::cout << "Opcion invalida\n\n";
             mov = 0;
         }
         switch(mov){
             case 1:
                 if( jugadorY - 1 >= UpperBorder ){
-                    --jugadorY; 
+                    y_pot = jugadorY - 1; 
                 }else{
-                    std::cout << "No puedes avanzar por ahi\n";
+                    std::cout << "No puedes avanzar por ahi\n\n";
                     mov = 0;
                 }
                 break;
             case 2:
                 if( jugadorY + 1 < dimension ){
-                    ++jugadorY; 
+                    y_pot = jugadorY + 1; 
                 }else{
-                    std::cout << "No puedes avanzar por ahi\n";
+                    std::cout << "No puedes avanzar por ahi\n\n";
                     mov = 0;
                 }
                 break;
             case 3:
                 if( jugadorX - 1 >= LeftBorder ){
-                    --jugadorX; 
+                    x_pot = jugadorX - 1;
                 }else{
-                    std::cout << "No puedes avanzar por ahi\n";
+                    std::cout << "No puedes avanzar por ahi\n\n";
                     mov = 0;
                 }
                 break;
             case 4:
                 if( jugadorX + 1 < dimension ){
-                    ++jugadorX; 
+                    x_pot = jugadorX + 1; 
                 }else{
-                    std::cout << "No puedes avanzar por ahi\n";
+                    std::cout << "No puedes avanzar por ahi\n\n";
                     mov = 0;
                 }
                 break;
@@ -100,14 +101,17 @@ void View::actualizarJugadorPos()
                 mov = 0;
         }
     } while(mov == 0);
-    int pos = convertirPosLineal();
-    controlador.actualizarJugadorPos(pos);
+    int pos = convertirPosLineal(x_pot, y_pot);
+    if (controlador.actualizarJugadorPos(pos) != 1) {
+        jugadorX = x_pot;
+        jugadorY = y_pot;
+    }
 }
 
-int View::convertirPosLineal()
+int View::convertirPosLineal(int x_pot, int y_pot)
 {
     int dimension = getDimension();
-    return jugadorX + jugadorY * dimension;
+    return x_pot + y_pot * dimension;
 }
 
 int View::getDimension() const
