@@ -21,7 +21,7 @@ Mazmorra::Mazmorra()
     listaGenerables.push_front(pocionVida);
 }
 
-Mazmorra::Mazmorra(int dimension, int numMonsters, int numBoss)
+Mazmorra::Mazmorra(int dimension, int numMonsters, int numBoss): Mazmorra()
 {
     //Inicialización del mapa
     for(int i = 0; i < dimension * dimension; ++i){

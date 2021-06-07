@@ -8,10 +8,18 @@ Jefe::Jefe() : recompensa(nullptr)
 }
 
 Jefe::Jefe(string nombre, int vidaMax, int pos):
-Entidad(nombre, vidaMax, pos) {}
+Entidad(nombre, vidaMax, pos) {
+    listaAtaques.push_back(Ataque("Rayo Tolerador", 30));
+    listaAtaques.push_back(Ataque("Gas Pimienta", 40));
+    listaAtaques.push_back(Ataque("Rasengan", 50));
+}
 
 Jefe::Jefe(string nombre, int vidaMax, int pos, Item* item): recompensa(item),
-Entidad(nombre, vidaMax, pos) {}
+Entidad(nombre, vidaMax, pos) {
+    listaAtaques.push_back(Ataque("Rayo Tolerador", 30));
+    listaAtaques.push_back(Ataque("Gas Pimienta", 40));
+    listaAtaques.push_back(Ataque("Rasengan", 50));
+}
 
 void Jefe::turno(Entidad* enemigo)
 {

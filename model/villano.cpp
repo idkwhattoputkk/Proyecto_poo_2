@@ -6,7 +6,10 @@ Villano::Villano(){
 }
 
 Villano::Villano(string nombre, int vidaMax, int pos): 
-    Entidad(nombre, vidaMax, pos) {}
+    Entidad(nombre, vidaMax, pos) {
+    listaAtaques.push_back(Ataque("Placaje", 20));
+    listaAtaques.push_back(Ataque("Chidori", 35));
+}
 
 void Villano::turno(Entidad* enemigo)
 {
