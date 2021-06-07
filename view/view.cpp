@@ -15,6 +15,7 @@ View::View(): jugadorX(0), jugadorY(0)
 
 void View::jugar(){
     do{
+        controlador.graficarMazmorra();
         actualizarJugadorPos();
     }while (getEstadoJuego() == true);
 }
@@ -51,7 +52,7 @@ void View::actualizarJugadorPos()
 {   
     int dimension = getDimension();
     int mov;
-    int x_pot = 0, y_pot = 0; //Valores potenciales de x e y
+    int x_pot = jugadorX, y_pot = jugadorY; //Valores potenciales de x e y
     do{
         std::cout << "Mover jugador hacia:\n1. Arriba\n2. Abajo\n3. Izquierda\n";
         std::cout << "4. Derecha\n> ";
@@ -102,7 +103,8 @@ void View::actualizarJugadorPos()
         }
     } while(mov == 0);
     int pos = convertirPosLineal(x_pot, y_pot);
-    if (controlador.actualizarJugadorPos(pos) != 1) {
+    int result = controlador.actualizarJugadorPos(pos);
+    if (result == 3) { //Es decir, que fue posible avanzar sin problemas
         jugadorX = x_pot;
         jugadorY = y_pot;
     }
