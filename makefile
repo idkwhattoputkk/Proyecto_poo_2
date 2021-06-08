@@ -1,5 +1,3 @@
-
-CXXFLAGS=-std=c++11 scons
 programa: main.o view.o peleaController.o mainController.o posController.o tomarController.o arma.o ataque.o\
 		  entidad.o item.o jefe.o jugador.o mazmorra.o pocionAtaque.o pocionEscape.o pocionMuerte.o\
 		  pocionResistencia.o pocionVida.o villano.o
