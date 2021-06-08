@@ -168,14 +168,19 @@ void Mazmorra::graficarMazmorra() {
             break;
         case ENTIDAD:
             if (mazmorra[i]->contenido.entidad->getName() == "Herz") {
-                cout << "P ";
+                cout << "H ";
             }
             else {
-                cout << "M ";
+                if (mazmorra[i]->contenido.entidad->getName() == "Chaos") {
+                    cout << "C ";
+                }
+                else {
+                    cout << "V ";
+                }
             }
             break;
         case VACIO:
-            cout << "E ";
+            cout << "- ";
             break;
         default:
             cout << "? ";
