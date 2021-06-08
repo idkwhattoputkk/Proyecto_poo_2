@@ -3,5 +3,5 @@
 *.json
 *.xml
 .vscode
-
+./Juego
 .idea
