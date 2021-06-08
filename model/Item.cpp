@@ -85,5 +85,5 @@ void Item::setPocket(int pocket){
     this->pocket = pocket;
 }
 
-void Item::usar(Entidad*, Entidad*){
+void Item::usar(Entidad* jugador, Entidad* enemigo){
 }

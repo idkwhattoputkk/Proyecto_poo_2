@@ -185,3 +185,13 @@ void Mazmorra::graficarMazmorra() {
         }
     }
 }
+
+void Mazmorra::entregarObjeto( int pos ) {
+    for (auto it = listaExistentes.begin(); it != listaExistentes.end(); ++it) {
+        int position = (*it)->getPos();
+        if (position == pos) {
+            listaExistentes.erase( it );
+            break;
+        }
+    }
+}

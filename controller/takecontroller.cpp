@@ -35,5 +35,6 @@ bool TomarController::addInventario(Mazmorra* mazmorra, Jugador* jugador, int po
     if( item->getNombre() == "Llave del Valhala" ) return true;
     jugador->addInventario(item);
     mazmorra->quitarContenido( pos );
+    mazmorra->entregarObjeto( pos );
     return false;
 }

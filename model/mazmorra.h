@@ -74,6 +74,7 @@ public:
     int randomPos(int);
     Tipo ocupado(int);
     void actualizarObjetos(int);
+    void entregarObjeto(int); //Cuando el objeto pasa a manos del jugador
     void graficarMazmorra();
 };
 
