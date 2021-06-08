@@ -90,8 +90,9 @@ void Jugador::turno(Entidad* enemigo)
                 cout << "Ingrese el item a usar\n> ";
                 cin >> opc;
                 try{
-                    Item* item = inventario.at(opc);
-                    item->usar(this, enemigo);
+                    /*Item* item = inventario.at(opc);
+                    item->usar(this, enemigo);*/
+                    inventario.at(opc)->usar(this, enemigo);
                     opc = 0;
                 }catch(std::out_of_range& e){
                     cout << "Item inexistente\n";
