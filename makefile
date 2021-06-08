@@ -44,4 +44,4 @@ villano.o: model/villano.cpp model/villano.h
 	g++ -std=c++14 -c model/villano.cpp
 
 clean: #comando para borrar los .o
-	rm -f *.o
+	rm -f *.o Juego
