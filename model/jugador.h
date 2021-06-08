@@ -8,7 +8,7 @@
 #include <string>
 #include <unordered_map>
 #include "entidad.h"
-#include "item.h"
+#include "Item.h"
 
 using std::string;
 using std::unordered_map;
