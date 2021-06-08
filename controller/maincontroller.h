@@ -19,7 +19,7 @@ class MainController
 private:
     Mazmorra mazmorra;
     bool jugando;
-    Jugador* jugador = new Jugador("Herz", 100, 0);
+    Jugador* jugador;
     Dificultad dificultad;
     PosController posicionador;
     TomarController gestor;

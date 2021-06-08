@@ -3,7 +3,6 @@
 MainController::MainController() : jugando(true)
 {
     //Siguiente: nombre, vidamax, pos
-    //jugador = new Jugador("Herz", 100, 0);
     posicionador = PosController();
     gestor = TomarController();
     pelea = PeleaController();
@@ -13,6 +12,7 @@ MainController::MainController(int dimension, int numMonsters, int numBoss,
     Dificultad dificultad) : dificultad(dificultad), jugando(true)
 {
     mazmorra = Mazmorra(dimension, numMonsters, numBoss);
+    jugador = new Jugador("Herz", 100, 0);
 }
 
 int MainController::actualizarJugadorPos(int pos)
