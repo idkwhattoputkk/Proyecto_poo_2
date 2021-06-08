@@ -5,7 +5,7 @@ programa: main.o view.o peleaController.o mainController.o posController.o tomar
 		   ataque.o entidad.o Item.o jefe.o jugador.o mazmorra.o PocionAtaque.o PocionEscape.o PocionMuerte.o\
 		   PocionResistencia.o PocionVida.o villano.o
 main.o: main.cpp view/view.h
-	g++ -std=c++14 -std=c++14 -c main.cpp
+	g++ -std=c++14  -c main.cpp
 view.o: view/view.cpp view/view.h
 	g++ -std=c++14 -c view/view.cpp
 peleaController.o: controller/fightcontroller.cpp controller/fightcontroller.h
